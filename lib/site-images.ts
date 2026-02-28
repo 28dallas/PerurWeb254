@@ -3,11 +3,11 @@ export const siteImages = {
   hero: "/images/lux/photo_2026-02-28_05-48-03.jpg",
   cta: "/images/lux/photo_2026-02-28_05-48-04.jpg",
   programs: {
-    women: "/images/lux/photo_2026-02-28_05-47-48.jpg",
-    youth: "/images/lux/photo_2026-02-28_05-47-49.jpg",
-    child: "/images/lux/photo_2026-02-28_05-47-50.jpg",
-    education: "/images/lux/photo_2026-02-28_05-47-51.jpg",
-    environment: "/images/lux/photo_2026-02-28_05-47-52.jpg"
+    women: "/images/lux/photo_2026-02-28_05-47-58.jpg",
+    youth: "/images/lux/pexels-august-de-richelieu-4427622.jpg",
+    child: "/images/lux/pexels-deeworkroom-15049534.jpg",
+    education: "/images/lux/pexels-finix-photographer-826467311-30874118.jpg",
+    environment: "/images/lux/photo_2026-02-28_05-48-02.jpg"
   },
   team: {
     director: "/images/lux/photo_2026-02-28_05-47-53.jpg",

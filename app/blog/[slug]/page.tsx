@@ -8,6 +8,27 @@ interface BlogPostPageProps {
   params: { slug: string };
 }
 
+function renderBody(body: unknown, excerpt?: string) {
+  if (typeof body === "string" && body.trim()) return body;
+
+  if (Array.isArray(body)) {
+    const text = body
+      .map((block) => {
+        if (typeof block !== "object" || block === null) return "";
+        const maybeBlock = block as { children?: Array<{ text?: string }> };
+        if (!Array.isArray(maybeBlock.children)) return "";
+        return maybeBlock.children.map((child) => child.text || "").join("");
+      })
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+
+    if (text) return text;
+  }
+
+  return excerpt || "Article content will be available soon.";
+}
+
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const post = await getBlogPostBySlug(params.slug);
   if (!post) return { title: "Article not found" };
@@ -31,10 +52,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           By {post.author?.name || "PRoH Team"}
           {post.publishedAt ? ` • ${formatDate(post.publishedAt)}` : ""}
         </p>
-        <p className="mt-6 whitespace-pre-line text-slate-700">
-          {post.excerpt ||
-            "Body renderer placeholder: add @portabletext/react and map block content for full rich text rendering from Sanity."}
-        </p>
+        <p className="mt-6 whitespace-pre-line text-slate-700">{renderBody(post.body, post.excerpt)}</p>
       </article>
     </Section>
   );

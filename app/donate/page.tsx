@@ -9,6 +9,9 @@ const impact = [
 ];
 
 export default function DonatePage() {
+  const oneTimeUrl = process.env.DONATION_ONE_TIME_URL;
+  const monthlyUrl = process.env.DONATION_MONTHLY_URL;
+
   return (
     <>
       <PageHero
@@ -20,13 +23,20 @@ export default function DonatePage() {
         <div className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-xl2 bg-white p-7 shadow-soft">
             <h2 className="text-xl font-semibold text-brandBlue">One-time & Recurring Donations</h2>
-            <p className="mt-3 text-sm text-slate-600">
-              Payment gateway integration placeholder: Stripe / Paystack. Donations can be configured for one-time and recurring contributions.
-            </p>
+            <p className="mt-3 text-sm text-slate-600">Choose a secure donation channel to support PRoH programs.</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button variant="secondary">Donate Once</Button>
-              <Button variant="primary">Give Monthly</Button>
+              <Button variant="secondary" href={oneTimeUrl || "/contact"}>
+                Donate Once
+              </Button>
+              <Button variant="primary" href={monthlyUrl || "/contact"}>
+                Give Monthly
+              </Button>
             </div>
+            {!oneTimeUrl || !monthlyUrl ? (
+              <p className="mt-4 text-xs text-slate-500">
+                Donation links are being finalized. Use the contact page for immediate support options.
+              </p>
+            ) : null}
             <p className="mt-5 text-xs text-slate-500">
               Data Protection Notice: Donor data is processed securely and never sold to third parties.
             </p>

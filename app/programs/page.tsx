@@ -18,15 +18,19 @@ export default async function ProgramsPage() {
       <Section>
         <div className="space-y-8">
           {programs.map((program) => (
-            <article key={program._id} id={program.slug.current} className="overflow-hidden rounded-xl2 bg-white shadow-soft">
+            <article
+              key={program._id}
+              id={program.slug.current}
+              className="overflow-hidden rounded-xl2 bg-white shadow-soft md:grid md:grid-cols-[320px_1fr]"
+            >
               {program.image?.asset?.url && (
-                <div className="relative h-56 w-full bg-softGray">
+                <div className="relative mx-auto aspect-[3/4] w-full max-w-sm bg-softGray md:mx-0 md:h-full md:max-w-none md:aspect-auto">
                   <Image
                     src={program.image.asset.url}
                     alt={program.image.alt || program.title}
                     fill
-                    className="object-cover"
-                    sizes="100vw"
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 320px"
                   />
                 </div>
               )}

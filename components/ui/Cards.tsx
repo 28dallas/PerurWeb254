@@ -6,12 +6,12 @@ import { formatDate } from "@/lib/utils";
 export function ProgramCard({ program }: { program: Program }) {
   return (
     <article className="overflow-hidden rounded-xl2 bg-white shadow-soft transition-transform duration-300 hover:-translate-y-1">
-      <div className="relative h-44 w-full bg-softGray">
+      <div className="relative aspect-[3/4] w-full bg-softGray">
         <Image
           src={program.image?.asset?.url || "/images/placeholder-blog.svg"}
           alt={program.image?.alt || program.title}
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>

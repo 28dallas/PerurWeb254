@@ -7,6 +7,13 @@ import { ImpactStats } from "@/components/sections/ImpactStats";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 import { getBlogPosts, getPrograms, getTestimonials } from "@/lib/sanity/fetchers";
+import Image from "next/image";
+
+const partners = [
+  { name: "World Vision", logo: "/images/partners/world-vision.svg" },
+  { name: "Mastercard", logo: "/images/partners/mastercard.svg" },
+  { name: "Microsoft", logo: "/images/partners/microsoft.svg" }
+];
 
 export default async function HomePage() {
   const [programs, posts, testimonials] = await Promise.all([getPrograms(), getBlogPosts(), getTestimonials()]);
@@ -82,10 +89,13 @@ export default async function HomePage() {
       </Section>
 
       <Section title="Strategic Partners">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {["ActionAid Kenya", "Somo", "Rafiki wa Maendeleo Trust", "BOMA Project"].map((partner) => (
-            <article key={partner} className="rounded-xl2 border border-slate-200 bg-white p-5 text-center text-sm font-semibold text-brandBlue">
-              {partner}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {partners.map((partner) => (
+            <article key={partner.name} className="rounded-xl2 border border-slate-200 bg-white p-5 text-center shadow-soft">
+              <div className="relative mx-auto h-16 w-full max-w-[180px]">
+                <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain" />
+              </div>
+              <p className="mt-3 text-sm font-semibold text-brandBlue">{partner.name}</p>
             </article>
           ))}
         </div>

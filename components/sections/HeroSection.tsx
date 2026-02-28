@@ -22,7 +22,7 @@ export function HeroSection() {
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brandOrange">West Pokot, Kenya</p>
           <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
-            Empowering Women Through Environment and Education Justice.
+            Empowering women, protecting children, and fostering a sustainable environment in West Pokot County, Kenya.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-slate-100">
             Perur Rays of Hope is a community-based organization dedicated to empowering women, protecting children, promoting education, and

@@ -1,17 +1,46 @@
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { getResources } from "@/lib/sanity/fetchers";
+import Link from "next/link";
 
-export default async function ResourcesPage() {
+interface ResourcesPageProps {
+  searchParams?: {
+    category?: string;
+  };
+}
+
+export default async function ResourcesPage({ searchParams }: ResourcesPageProps) {
   const resources = await getResources();
+  const categories = Array.from(new Set(resources.map((resource) => resource.category))).sort((a, b) => a.localeCompare(b));
+  const selectedCategory = searchParams?.category || "All";
+  const filteredResources =
+    selectedCategory === "All" ? resources : resources.filter((resource) => resource.category === selectedCategory);
 
   return (
     <>
       <PageHero title="Resources" description="Download annual reports, policies, and guidance materials." />
       <Section>
-        <div className="mb-6 rounded-xl2 bg-softGray p-4 text-sm text-slate-600">Filter placeholder: Annual Reports | Policies | Guidelines</div>
+        <div className="mb-6 flex flex-wrap gap-2">
+          {["All", ...categories].map((category) => {
+            const active = selectedCategory === category;
+            const href = category === "All" ? "/resources" : `/resources?category=${encodeURIComponent(category)}`;
+            return (
+              <Link
+                key={category}
+                href={href}
+                className={`rounded-full border px-4 py-2 text-sm ${
+                  active
+                    ? "border-brandBlue bg-brandBlue text-white"
+                    : "border-slate-300 bg-white text-slate-700 hover:border-brandBlue hover:text-brandBlue"
+                }`}
+              >
+                {category}
+              </Link>
+            );
+          })}
+        </div>
         <div className="space-y-4">
-          {resources.map((resource) => (
+          {filteredResources.map((resource) => (
             <article key={resource._id} className="flex flex-col items-start justify-between gap-2 rounded-xl2 bg-white p-5 shadow-soft sm:flex-row sm:items-center">
               <div>
                 <h2 className="text-base font-semibold text-brandBlue">{resource.title}</h2>

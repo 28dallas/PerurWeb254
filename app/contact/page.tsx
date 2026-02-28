@@ -21,8 +21,14 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-wide text-brandGreen">Map</h3>
-              <div className="mt-2 rounded-xl2 bg-white p-3 text-sm text-slate-500">
-                Google Maps embed placeholder. Insert iframe with location pin in production.
+              <div className="mt-2 overflow-hidden rounded-xl2 border border-slate-200 bg-white">
+                <iframe
+                  title="Perur Rays of Hope location map"
+                  src="https://www.google.com/maps?q=Kapenguria%2C%20West%20Pokot%20County%2C%20Kenya&output=embed"
+                  className="h-56 w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </aside>

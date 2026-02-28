@@ -32,6 +32,8 @@ See `.env.example`.
 - `FORM_FORWARD_ENDPOINT`
 - `FORM_FORWARD_AUTH_TOKEN`
 - `API_ALERT_WEBHOOK_URL` (optional)
+- `DONATION_ONE_TIME_URL`
+- `DONATION_MONTHLY_URL`
 - `NEXT_PUBLIC_SANITY_PROJECT_ID`
 - `NEXT_PUBLIC_SANITY_DATASET`
 - `SANITY_API_TOKEN`
@@ -152,7 +154,7 @@ Defined in `lib/sanity/queries/index.ts`:
 
 ## Notes
 
-- Donation payment buttons are UI-ready placeholders to connect to payment providers.
+- Donation buttons use `DONATION_ONE_TIME_URL` and `DONATION_MONTHLY_URL`.
 - Blog body renderer can be upgraded with `@portabletext/react` for rich content.
 
 ## Delivery Docs
