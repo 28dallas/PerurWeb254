@@ -13,6 +13,19 @@ const programSchema = {
       title: "Impact Metrics",
       of: [{ type: "object", fields: [{ name: "label", type: "string" }, { name: "value", type: "string" }] }]
     },
+    {
+      name: "fundingGoal",
+      type: "number",
+      title: "Funding Goal ($)",
+      description: "Target amount to raise for this program",
+    },
+    {
+      name: "amountRaised",
+      type: "number",
+      title: "Amount Raised ($)",
+      description: "Current amount raised for this program",
+      initialValue: 0,
+    },
     { name: "image", type: "image", title: "Program Image", options: { hotspot: true } }
   ]
 };

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { HiMenuAlt3, HiX, HiOutlineUserCircle } from "react-icons/hi";
 import { Button } from "@/components/ui/Button";
 import { siteImages } from "@/lib/site-images";
 import { cn } from "@/lib/utils";
@@ -36,9 +36,14 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Button href="/donate" variant="secondary" className="px-4 py-2 text-sm">
-            Donate
-          </Button>
+          <div className="ml-2 flex items-center gap-4 border-l border-slate-200 pl-6">
+            <Link href="/portal" className="text-slate-500 transition-colors hover:text-brandBlue" aria-label="Supporter Portal Login">
+              <HiOutlineUserCircle size={24} />
+            </Link>
+            <Button href="/donate" variant="secondary" className="px-5 py-2 text-sm shadow-none">
+              Donate
+            </Button>
+          </div>
         </div>
 
         <button
@@ -65,6 +70,14 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/portal"
+            className="mt-2 flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+            onClick={() => setOpen(false)}
+          >
+            <HiOutlineUserCircle size={20} className="text-brandBlue" />
+            Portal Login
+          </Link>
           <Button href="/donate" variant="secondary" className="mt-2 w-full justify-center">
             Donate
           </Button>

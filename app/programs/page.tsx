@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
+import { ProgressBar } from "@/components/ui/ProgressBar";
 import { getPrograms } from "@/lib/sanity/fetchers";
 
 export default async function ProgramsPage() {
@@ -35,39 +36,49 @@ export default async function ProgramsPage() {
                 </div>
               )}
               <div className="p-7">
-              <h2 className="text-2xl font-semibold text-brandBlue">{program.title}</h2>
-              <p className="mt-3 text-slate-700">{program.description}</p>
+                <h2 className="text-2xl font-semibold text-brandBlue">{program.title}</h2>
+                <p className="mt-3 text-slate-700">{program.description}</p>
 
-              {program.activities && (
-                <div className="mt-5">
-                  <h3 className="text-sm font-semibold uppercase tracking-wide text-brandGreen">Activities</h3>
-                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-600">
-                    {program.activities.map((activity) => (
-                      <li key={activity}>{activity}</li>
+                {program.activities && (
+                  <div className="mt-5">
+                    <h3 className="text-sm font-semibold uppercase tracking-wide text-brandGreen">Activities</h3>
+                    <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-600">
+                      {program.activities.map((activity) => (
+                        <li key={activity}>{activity}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {program.impactStats && (
+                  <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    {program.impactStats.map((item) => (
+                      <div key={item.label} className="rounded-xl2 bg-softGray p-4">
+                        <p className="text-xl font-bold text-brandBlue">{item.value}</p>
+                        <p className="text-sm text-slate-600">{item.label}</p>
+                      </div>
                     ))}
-                  </ul>
-                </div>
-              )}
+                  </div>
+                )}
 
-              {program.impactStats && (
-                <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {program.impactStats.map((item) => (
-                    <div key={item.label} className="rounded-xl2 bg-softGray p-4">
-                      <p className="text-xl font-bold text-brandBlue">{item.value}</p>
-                      <p className="text-sm text-slate-600">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
+                {program.fundingGoal && (
+                  <div className="mt-6 rounded-xl2 border border-brandBlue/10 bg-white p-5 shadow-soft">
+                    <h3 className="mb-3 text-sm font-semibold text-brandBlue">Campaign Progress</h3>
+                    <ProgressBar
+                      amountRaised={program.amountRaised || 0}
+                      fundingGoal={program.fundingGoal}
+                    />
+                  </div>
+                )}
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link href={`/programs/${program.slug.current}`} className="text-sm font-semibold text-brandBlue">
-                  Program details
-                </Link>
-                <Button href="/get-involved" variant="ghost">
-                  Support this program
-                </Button>
-              </div>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href={`/programs/${program.slug.current}`} className="text-sm font-semibold text-brandBlue">
+                    Program details
+                  </Link>
+                  <Button href="/get-involved" variant="ghost">
+                    Support this program
+                  </Button>
+                </div>
               </div>
             </article>
           ))}

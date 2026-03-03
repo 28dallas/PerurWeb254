@@ -23,6 +23,8 @@ export interface Program {
   activities?: string[];
   impactStats?: ImpactStat[];
   image?: ImageAsset;
+  fundingGoal?: number;
+  amountRaised?: number;
 }
 
 export interface TeamMember {

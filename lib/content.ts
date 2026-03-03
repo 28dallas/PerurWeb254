@@ -13,7 +13,9 @@ export const fallbackPrograms: Program[] = [
       { label: "Women trained", value: "480+" },
       { label: "Savings groups", value: "42" }
     ],
-    image: { asset: { url: siteImages.programs.women }, alt: "Women in a savings and training session" }
+    image: { asset: { url: siteImages.programs.women }, alt: "Women in a savings and training session" },
+    fundingGoal: 10000,
+    amountRaised: 6500
   },
   {
     _id: "youth-empowerment",
@@ -26,7 +28,9 @@ export const fallbackPrograms: Program[] = [
       { label: "Youth skilled", value: "620+" },
       { label: "Internships linked", value: "110" }
     ],
-    image: { asset: { url: siteImages.programs.youth }, alt: "Youth vocational learning session" }
+    image: { asset: { url: siteImages.programs.youth }, alt: "Youth vocational learning session" },
+    fundingGoal: 15000,
+    amountRaised: 3000
   },
   {
     _id: "child-protection",
