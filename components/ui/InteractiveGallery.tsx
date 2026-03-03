@@ -25,11 +25,11 @@ export default function InteractiveGallery({ images }: Props) {
             onClick={() => setOpen(src)}
             className="relative aspect-square w-full overflow-hidden rounded-md bg-softGray focus:outline-none transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 will-change-transform"
           >
-            {/* use plain img for thumbnails to avoid resizing flicker */}
-            <img
+            <Image
               src={src}
               alt="Program gallery image"
-              className="h-full w-full object-cover object-center"
+              fill
+              className="object-cover object-center"
             />
           </button>
         ))}
@@ -46,9 +46,11 @@ export default function InteractiveGallery({ images }: Props) {
             className="relative max-w-[70vw] max-h-[70vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={open}
               alt="Expanded image"
+              width={800}
+              height={600}
               className="max-w-full max-h-full object-contain block mx-auto"
             />
             <button

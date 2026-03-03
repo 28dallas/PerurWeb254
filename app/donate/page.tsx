@@ -3,10 +3,6 @@
 import { useState } from "react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
-import { loadStripe } from "@stripe/stripe-js";
-
-// Make sure to set NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY in .env
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "");
 
 const impact = [
   { amount: "$20", effect: "Provides learning materials for one child for a month" },
@@ -61,8 +57,8 @@ export default function DonatePage() {
           throw new Error(data.error || "Failed to initialize M-Pesa push");
         }
       }
-    } catch (err: any) {
-      setError(err.message || "An unexpected error occurred. Please try again.");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
     }
