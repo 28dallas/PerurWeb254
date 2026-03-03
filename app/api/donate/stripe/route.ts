@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/constants";
 
 // Initialize Stripe ensuring the key exists
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2023-10-16",
+  apiVersion: "2026-02-25.clover",
 });
 
 const checkoutSchema = z.object({
