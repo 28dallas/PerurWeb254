@@ -13,14 +13,14 @@ const quickLinks = [
 
 export async function Footer() {
   const siteSettings = await getSiteSettings();
-  const contactEmail = siteSettings.email || "info@perurraysofhope.org";
-  const contactPhone = siteSettings.phone || "+254 700 000 000";
-  const contactAddress = siteSettings.address || "West Pokot County, Kenya";
+  const contactEmail = siteSettings?.email || "info@perurraysofhope.org";
+  const contactPhone = siteSettings?.phone || "+254 700 000 000";
+  const contactAddress = siteSettings?.address || "West Pokot County, Kenya";
 
   const socialLinks = [
-    { label: "Facebook", href: siteSettings.socialLinks?.facebook, icon: <FaFacebookF /> },
-    { label: "Instagram", href: siteSettings.socialLinks?.instagram, icon: <FaInstagram /> },
-    { label: "LinkedIn", href: siteSettings.socialLinks?.linkedin, icon: <FaLinkedinIn /> }
+    { label: "Facebook", href: siteSettings?.socialLinks?.facebook, icon: <FaFacebookF /> },
+    { label: "Instagram", href: siteSettings?.socialLinks?.instagram, icon: <FaInstagram /> },
+    { label: "LinkedIn", href: siteSettings?.socialLinks?.linkedin, icon: <FaLinkedinIn /> }
   ].filter((item) => Boolean(item.href));
 
   return (

@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { getPrograms } from "@/lib/sanity/fetchers";
+import { siteImages } from "@/lib/site-images";
+import InteractiveGallery from "@/components/ui/InteractiveGallery";
 
 export default async function ProgramsPage() {
   const programs = await getPrograms();
@@ -83,6 +85,11 @@ export default async function ProgramsPage() {
             </article>
           ))}
         </div>
+      </Section>
+
+      <Section>
+        <h3 className="mb-4 text-xl font-semibold text-brandBlue">Program Gallery</h3>
+        <InteractiveGallery images={siteImages.gallery.filter((p) => p.includes("/images/new/"))} />
       </Section>
     </>
   );

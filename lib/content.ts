@@ -101,7 +101,7 @@ export const fallbackPosts: BlogPost[] = [
     title: "Perur Rays of Hope Marks World Soil Day",
     slug: { current: "perur-rays-of-hope-marks-world-soil-day" },
     excerpt: "PRoH joined local communities to raise awareness on soil conservation and sustainable land use.",
-    category: "Child Protection",
+    category: "Environment",
     publishedAt: "2023-12-05",
     author: { name: "PRoH Team" },
     featuredImage: { asset: { url: siteImages.blog.child }, alt: "Community safeguarding discussion" }
