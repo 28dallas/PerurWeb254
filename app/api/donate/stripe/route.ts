@@ -4,9 +4,7 @@ import { z } from "zod";
 import { SITE_URL } from "@/lib/constants";
 
 // Initialize Stripe ensuring the key exists
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2026-02-25.clover",
-});
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "");
 
 const checkoutSchema = z.object({
   amount: z.number().min(1),
