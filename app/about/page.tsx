@@ -27,8 +27,8 @@ const mandate = [
 ];
 
 const partners = [
-  { name: "World Vision", logo: "/images/partners/world-vision.svg" },
-  { name: "Mastercard", logo: "/images/partners/mastercard.svg" },
+  { name: "World Vision", logo: "/images/partners/wv.png" },
+  { name: "Global Give Back Circle", logo: "/images/partners/gb.png" },
   { name: "Microsoft", logo: "/images/partners/microsoft.svg" }
 ];
 
