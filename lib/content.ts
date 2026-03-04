@@ -177,7 +177,7 @@ export const fallbackSiteSettings: SiteSettings = {
   address: "P.O. Box 0-30600, Kapenguria, West Pokot County, Kenya",
   socialLinks: {
     facebook: "",
-    instagram: "",
+    instagram: "https://www.instagram.com/perurraysofhope?igsh=dXBobGY2MXBuZGtu",
     linkedin: "",
     x: ""
   }

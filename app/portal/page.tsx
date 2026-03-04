@@ -8,7 +8,7 @@ import { AnimatedInView } from "@/components/ui/AnimatedInView";
 
 // Future integration: Replace with real user data securely fetched via NextAuth session
 const mockUser = {
-    name: "Sarah Jenkins",
+    name: "Supporter",
     role: "Recurring Donor & Volunteer",
     joinDate: "March 2023",
     totalDonated: 1450,
@@ -27,7 +27,7 @@ export default function PortalDashboard() {
     return (
         <>
             <PageHero
-                title={`Welcome back, ${mockUser.name.split(" ")[0]}`}
+                title={`Welcome back, ${mockUser.name}`}
                 description="Manage your recurring impact, download tax receipts, and log your volunteer hours."
             />
 

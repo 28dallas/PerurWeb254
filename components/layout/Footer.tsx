@@ -13,13 +13,14 @@ const quickLinks = [
 
 export async function Footer() {
   const siteSettings = await getSiteSettings();
+  const instagramFallback = "https://www.instagram.com/perurraysofhope?igsh=dXBobGY2MXBuZGtu";
   const contactEmail = siteSettings?.email || "info@perurraysofhope.org";
   const contactPhone = siteSettings?.phone || "+254 700 000 000";
   const contactAddress = siteSettings?.address || "West Pokot County, Kenya";
 
   const socialLinks = [
     { label: "Facebook", href: siteSettings?.socialLinks?.facebook, icon: <FaFacebookF /> },
-    { label: "Instagram", href: siteSettings?.socialLinks?.instagram, icon: <FaInstagram /> },
+    { label: "Instagram", href: siteSettings?.socialLinks?.instagram || instagramFallback, icon: <FaInstagram /> },
     { label: "LinkedIn", href: siteSettings?.socialLinks?.linkedin, icon: <FaLinkedinIn /> }
   ].filter((item) => Boolean(item.href));
 
@@ -54,6 +55,14 @@ export async function Footer() {
           <p className="mt-3 text-sm">{contactAddress}</p>
           <p className="text-sm">{contactEmail}</p>
           <p className="text-sm">{contactPhone}</p>
+          <a
+            href={siteSettings?.socialLinks?.instagram || instagramFallback}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 inline-block text-sm text-slate-200 hover:text-brandOrange"
+          >
+            @perurraysofhope
+          </a>
           {socialLinks.length > 0 && (
             <div className="mt-4 flex gap-3">
               {socialLinks.map((item) => (

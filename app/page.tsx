@@ -25,14 +25,14 @@ export default async function HomePage() {
       <Section title="Vision & Mission" subtitle="A Resilient and Empowered Community.">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-xl2 bg-softGray p-6">
-            <h3 className="text-xl font-semibold text-brandBlue">Vision</h3>
+            <h3 className="text-xl font-semibold text-brandBlue"></h3>
             <p className="mt-2 text-slate-700">
              A resilient and empowered community led by skilled women and youth, committed to safeguarding children and preserving the environment
               for sustainable development.
             </p>
           </div>
           <div className="rounded-xl2 bg-softGray p-6">
-            <h3 className="text-xl font-semibold text-brandBlue">Mission</h3>
+            <h3 className="text-xl font-semibold text-brandBlue"></h3>
             <p className="mt-2 text-slate-700">
               To protect children and provide quality education by empowering youth and young women through skills, resilient livelihoods, and
               environmental conservation.
@@ -42,19 +42,7 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      <Section title="Our Programs" subtitle="Integrated programs designed for lasting impact.">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {programs.slice(0, 3).map((program) => (
-            <ProgramCard key={program._id} program={program} />
-          ))}
-        </div>
-        <div className="mt-8">
-          <Button href="/programs" variant="ghost">
-            View all programs
-          </Button>
-        </div>
-      </Section>
-
+      
       <Section className="bg-softGray" title="Impact at a Glance">
         <ImpactStats />
       </Section>

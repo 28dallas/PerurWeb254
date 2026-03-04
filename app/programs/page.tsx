@@ -15,7 +15,7 @@ export default async function ProgramsPage() {
     <>
       <PageHero
         title="Programs"
-        description="Women Empowerment, Youth Empowerment, Child Protection, Education, and Environmental Conservation."
+        description="Child Protection,Women Empowerment, Youth Empowerment,  Education, and Environmental Conservation."
       />
 
       <Section>
@@ -89,7 +89,7 @@ export default async function ProgramsPage() {
 
       <Section>
         <h3 className="mb-4 text-xl font-semibold text-brandBlue">Program Gallery</h3>
-        <InteractiveGallery images={siteImages.gallery.filter((p) => p.includes("/images/new/"))} />
+        <InteractiveGallery images={siteImages.gallery.slice(0, 24)} />
       </Section>
     </>
   );

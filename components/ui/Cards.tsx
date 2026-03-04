@@ -3,6 +3,8 @@ import Link from "next/link";
 import type { BlogPost, Program, TeamMember } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
 
+const COMMON_CBO_STATEMENT = "Perur Rays of Hope CBO";
+
 export function ProgramCard({ program }: { program: Program }) {
   return (
     <article className="overflow-hidden rounded-xl2 bg-white shadow-soft transition-transform duration-300 hover:-translate-y-1">
@@ -17,7 +19,7 @@ export function ProgramCard({ program }: { program: Program }) {
       </div>
       <div className="p-6">
         <h3 className="text-xl font-semibold text-brandBlue">{program.title}</h3>
-        <p className="mt-3 text-sm text-slate-600">{program.description}</p>
+        <p className="mt-3 text-sm text-slate-600">{COMMON_CBO_STATEMENT}</p>
         <Link href={`/programs/${program.slug.current}`} className="mt-4 inline-block text-sm font-semibold text-brandGreen">
           Learn more
         </Link>
@@ -42,7 +44,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
         <p className="text-xs font-medium uppercase tracking-wide text-brandGreen">{post.category || "News"}</p>
         <h3 className="mt-2 text-lg font-semibold text-brandBlue">{post.title}</h3>
         {post.publishedAt && <p className="mt-2 text-xs text-slate-500">{formatDate(post.publishedAt)}</p>}
-        <p className="mt-3 text-sm text-slate-600">{post.excerpt}</p>
+        <p className="mt-3 text-sm text-slate-600">{COMMON_CBO_STATEMENT}</p>
         <Link href={`/blog/${post.slug.current}`} className="mt-4 inline-block text-sm font-semibold text-brandBlue">
           Read article
         </Link>
