@@ -1,12 +1,12 @@
 import { PageHero } from "@/components/layout/PageHero";
-import { BlogCard, ProgramCard } from "@/components/ui/Cards";
+import { BlogCard } from "@/components/ui/Cards";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ImpactStats } from "@/components/sections/ImpactStats";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
-import { getBlogPosts, getPrograms, getTestimonials } from "@/lib/sanity/fetchers";
+import { getBlogPosts, getTestimonials } from "@/lib/sanity/fetchers";
 import Image from "next/image";
 
 const partners = [
@@ -16,7 +16,7 @@ const partners = [
 ];
 
 export default async function HomePage() {
-  const [programs, posts, testimonials] = await Promise.all([getPrograms(), getBlogPosts(), getTestimonials()]);
+  const [posts, testimonials] = await Promise.all([getBlogPosts(), getTestimonials()]);
 
   return (
     <>
@@ -25,14 +25,14 @@ export default async function HomePage() {
       <Section title="Vision & Mission" subtitle="A Resilient and Empowered Community.">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-xl2 bg-softGray p-6">
-            <h3 className="text-xl font-semibold text-brandBlue"></h3>
+            <h3 className="text-xl font-semibold text-brandBlue">Vision</h3>
             <p className="mt-2 text-slate-700">
              A resilient and empowered community led by skilled women and youth, committed to safeguarding children and preserving the environment
               for sustainable development.
             </p>
           </div>
           <div className="rounded-xl2 bg-softGray p-6">
-            <h3 className="text-xl font-semibold text-brandBlue"></h3>
+            <h3 className="text-xl font-semibold text-brandBlue">Mission</h3>
             <p className="mt-2 text-slate-700">
               To protect children and provide quality education by empowering youth and young women through skills, resilient livelihoods, and
               environmental conservation.
