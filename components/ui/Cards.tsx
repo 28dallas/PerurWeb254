@@ -16,12 +16,14 @@ const blogFallbackImages = [
   siteImages.gallery[5]
 ];
 
-export function ProgramCard({ program }: { program: Program }) {
+export function ProgramCard({ program, index = 0 }: { program: Program; index?: number }) {
+  const fallbackImage = blogFallbackImages[index % blogFallbackImages.length];
+  
   return (
     <article className="overflow-hidden rounded-xl2 bg-white shadow-soft transition-transform duration-300 hover:-translate-y-1">
       <div className="relative aspect-[3/4] w-full bg-softGray">
         <Image
-          src={program.image?.asset?.url || "/images/placeholder-blog.svg"}
+          src={program.image?.asset?.url || fallbackImage}
           alt={program.image?.alt || program.title}
           fill
           className="object-cover object-center"

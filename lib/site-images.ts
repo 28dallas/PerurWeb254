@@ -47,11 +47,11 @@ export const siteImages = {
   hero: "/images/og-default.jpg",
   cta: "/images/og-default.jpg",
   programs: {
-    women: "/images/og-default.jpg",
-    youth: "/images/og-default.jpg",
-    child: "/images/og-default.jpg",
-    education: "/images/og-default.jpg",
-    environment: "/images/og-default.jpg"
+    women: "/images/new/photo_1_2026-03-03_11-10-37.jpg",
+    youth: "/images/new/photo_5_2026-03-03_11-10-37.jpg",
+    child: "/images/new/photo_8_2026-03-03_11-10-37.jpg",
+    education: "/images/new/photo_12_2026-03-03_11-10-37.jpg",
+    environment: "/images/new/photo_15_2026-03-03_11-10-37.jpg"
   },
   team: {
     director: "/images/og-default.jpg",
