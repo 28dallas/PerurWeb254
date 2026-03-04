@@ -1,7 +1,6 @@
 import { PageHero } from "@/components/layout/PageHero";
 import { TeamCard } from "@/components/ui/Cards";
 import { Section } from "@/components/ui/Section";
-import { getTeamMembers } from "@/lib/sanity/fetchers";
 import Image from "next/image";
 
 const coreValues = [
@@ -32,9 +31,15 @@ const partners = [
   { name: "Microsoft", logo: "/images/partners/microsoft.svg" }
 ];
 
-export default async function AboutPage() {
-  const team = await getTeamMembers();
+const teamMembers = [
+  { _id: "team-1", name: "Shujaa Caroline Menach, HSC.", role: "Executive Director" },
+  { _id: "team-2", name: "Abiagel Moraa", role: "Program Manger" },
+  { _id: "team-3", name: "Victor Maosi", role: "Finance Officer" },
+  { _id: "team-4", name: "Ruth Akoule", role: "Program Reporting Officer" },
+  { _id: "team-5", name: "Lilian Mnagei", role: "Community Lead & Focal Liason Officer" }
+];
 
+export default async function AboutPage() {
   return (
     <>
       <PageHero
@@ -95,7 +100,7 @@ export default async function AboutPage() {
 
       <Section className="bg-softGray" title="Team">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {team.map((member) => (
+          {teamMembers.map((member) => (
             <TeamCard key={member._id} member={member} />
           ))}
         </div>
