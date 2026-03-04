@@ -98,7 +98,7 @@ export const fallbackTeam: TeamMember[] = [
 export const fallbackPosts: BlogPost[] = [
   {
     _id: "post-1",
-    title: "Perur Rays of Hope Marks World Soil Day",
+    title: "Perur Rays of Hope Environment Day",
     slug: { current: "perur-rays-of-hope-marks-world-soil-day" },
     excerpt: "PRoH joined local communities to raise awareness on soil conservation and sustainable land use.",
     category: "Environment",

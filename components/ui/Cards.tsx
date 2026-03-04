@@ -66,14 +66,14 @@ export function ProgramCard({ program, index = 0 }: { program: Program; index?: 
   );
 }
 
-export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }) {
+export function BlogCard({ post, index = 0, imageOverride }: { post: BlogPost; index?: number; imageOverride?: string }) {
   const fallbackImage = getBlogFallbackImage(post, index);
   
   return (
     <article className="overflow-hidden rounded-xl2 bg-white shadow-soft">
       <div className="relative h-48 w-full bg-softGray">
         <Image
-          src={post.featuredImage?.asset?.url || fallbackImage}
+          src={imageOverride || post.featuredImage?.asset?.url || fallbackImage}
           alt={post.title}
           fill
           className="object-cover"

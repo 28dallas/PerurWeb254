@@ -10,9 +10,15 @@ import { getBlogPosts, getTestimonials } from "@/lib/sanity/fetchers";
 import Image from "next/image";
 
 const partners = [
-  { name: "World Vision", logo: "/images/partners/world-vision.svg" },
-  { name: "Mastercard", logo: "/images/partners/mastercard.svg" },
+  { name: "World Vision", logo: "/images/partners/wv.png" },
+  { name: "Global Give Back Circle", logo: "/images/partners/gb.png" },
   { name: "Microsoft", logo: "/images/partners/microsoft.svg" }
+];
+
+const homeBlogCardImages = [
+  "/images/new/photo_85_2026-03-03_11-10-37.jpg",
+  "/images/new/photo_70_2026-03-03_11-10-37.jpg",
+  "/images/new/photo_22_2026-03-03_11-10-37.jpg"
 ];
 
 export default async function HomePage() {
@@ -68,7 +74,7 @@ export default async function HomePage() {
       <Section title="Latest Blog Posts">
         <div className="grid gap-6 lg:grid-cols-3">
           {posts.slice(0, 3).map((post, index) => (
-            <BlogCard key={post._id} post={post} index={index} />
+            <BlogCard key={post._id} post={post} index={index} imageOverride={homeBlogCardImages[index]} />
           ))}
         </div>
       </Section>

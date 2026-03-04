@@ -64,8 +64,8 @@ export const siteImages = {
     environment: "/images/lux/pexels-markusspiske-2990617.jpg"
   },
   events: {
-    forum: "/images/og-default.jpg",
-    youth: "/images/og-default.jpg"
+    forum: "/images/new/photo_35_2026-03-03_11-10-37.jpg",
+    youth: "/images/new/photo_80_2026-03-03_11-10-37.jpg"
   },
   gallery: [
     // Mix of both folders for variety

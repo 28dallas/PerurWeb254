@@ -6,6 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const eventCardImages = [
+  "/images/new/photo_35_2026-03-03_11-10-37.jpg",
+  "/images/new/photo_80_2026-03-03_11-10-37.jpg"
+];
 
 interface EventsPageProps {
   searchParams?: {
@@ -117,12 +121,15 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
         </article>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          {events.map((event) => (
+          {events.map((event, index) => {
+            const cardImage = eventCardImages[index] || event.image?.asset?.url;
+
+            return (
             <article key={event._id} className="overflow-hidden rounded-xl2 bg-white shadow-soft">
-              {event.image?.asset?.url && (
+              {cardImage && (
                 <div className="relative h-48 w-full bg-softGray">
                   <Image
-                    src={event.image.asset.url}
+                    src={cardImage}
                     alt={event.image.alt || event.title}
                     fill
                     className="object-cover"
@@ -140,7 +147,8 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
                 </Link>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </Section>
     </>
