@@ -2,8 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost, Program, TeamMember } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
+import { siteImages } from "@/lib/site-images";
 
 const COMMON_CBO_STATEMENT = "Perur Rays of Hope CBO";
+
+// Fallback images for blog posts when no featured image is available
+const blogFallbackImages = [
+  siteImages.gallery[0],
+  siteImages.gallery[1], 
+  siteImages.gallery[2],
+  siteImages.gallery[3],
+  siteImages.gallery[4],
+  siteImages.gallery[5]
+];
 
 export function ProgramCard({ program }: { program: Program }) {
   return (
@@ -28,12 +39,14 @@ export function ProgramCard({ program }: { program: Program }) {
   );
 }
 
-export function BlogCard({ post }: { post: BlogPost }) {
+export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }) {
+  const fallbackImage = blogFallbackImages[index % blogFallbackImages.length];
+  
   return (
     <article className="overflow-hidden rounded-xl2 bg-white shadow-soft">
       <div className="relative h-48 w-full bg-softGray">
         <Image
-          src={post.featuredImage?.asset?.url || "/images/placeholder-blog.svg"}
+          src={post.featuredImage?.asset?.url || fallbackImage}
           alt={post.title}
           fill
           className="object-cover"

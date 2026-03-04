@@ -67,8 +67,8 @@ export default async function HomePage() {
 
       <Section title="Latest Blog Posts">
         <div className="grid gap-6 lg:grid-cols-3">
-          {posts.slice(0, 3).map((post) => (
-            <BlogCard key={post._id} post={post} />
+          {posts.slice(0, 3).map((post, index) => (
+            <BlogCard key={post._id} post={post} index={index} />
           ))}
         </div>
       </Section>
