@@ -56,7 +56,6 @@ export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }
       <div className="p-5">
         <p className="text-xs font-medium uppercase tracking-wide text-brandGreen">{post.category || "News"}</p>
         <h3 className="mt-2 text-lg font-semibold text-brandBlue">{post.title}</h3>
-        {post.publishedAt && <p className="mt-2 text-xs text-slate-500">{formatDate(post.publishedAt)}</p>}
         <p className="mt-3 text-sm text-slate-600">{COMMON_CBO_STATEMENT}</p>
         <Link href={`/blog/${post.slug.current}`} className="mt-4 inline-block text-sm font-semibold text-brandBlue">
           Read article

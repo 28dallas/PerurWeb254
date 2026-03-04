@@ -20,8 +20,8 @@ export default async function BlogPage() {
           Categories: Child Protection, Women Empowerment, Youth Empowerment, Education, Environment.
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <BlogCard key={post._id} post={post} />
+          {posts.map((post, index) => (
+            <BlogCard key={post._id} post={post} index={index} />
           ))}
         </div>
       </Section>
