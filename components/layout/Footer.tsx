@@ -15,7 +15,7 @@ export async function Footer() {
   const siteSettings = await getSiteSettings();
   const instagramFallback = "https://www.instagram.com/perurraysofhope?igsh=dXBobGY2MXBuZGtu";
   const contactEmail = siteSettings?.email || "info@perurraysofhope.org";
-  const contactPhone = siteSettings?.phone || "+254 700 000 000";
+  const contactPhone = siteSettings?.phone || "+254 724578225";
   const contactAddress = siteSettings?.address || "West Pokot County, Kenya";
 
   const socialLinks = [

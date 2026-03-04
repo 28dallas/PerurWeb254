@@ -57,15 +57,13 @@ export default async function AboutPage() {
           <div className="rounded-xl2 bg-softGray p-6">
             <h3 className="text-xl font-semibold text-brandBlue"></h3>
             <p className="mt-2 text-slate-700">
-              A resilient and empowered community led by skilled women and youth, committed to safeguarding children and preserving the
-              environment for sustainable development.
+              A resilient and empowered community.
             </p>
           </div>
           <div className="rounded-xl2 bg-softGray p-6">
             <h3 className="text-xl font-semibold text-brandBlue"></h3>
             <p className="mt-2 text-slate-700">
-              To protect children and provide quality education by empowering youth and young women through skills, fostering resilient
-              livelihoods, and promoting environmental conservation.
+              Safe Guarding children, empowering youths and women, and conserving the environment for resilient livelihoods.
             </p>
           </div>
         </div>

@@ -28,20 +28,18 @@ export default async function HomePage() {
     <>
       <HeroSection />
 
-      <Section title="Vision & Mission" subtitle="A Resilient and Empowered Community.">
+      <Section title="Vision & Mission" subtitle="Founded in 2014 .">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-xl2 bg-softGray p-6">
             <h3 className="text-xl font-semibold text-brandBlue"></h3>
             <p className="mt-2 text-slate-700">
-             A resilient and empowered community led by skilled women and youth, committed to safeguarding children and preserving the environment
-              for sustainable development.
+             A resilient and empowered community 
             </p>
           </div>
           <div className="rounded-xl2 bg-softGray p-6">
             <h3 className="text-xl font-semibold text-brandBlue"></h3>
             <p className="mt-2 text-slate-700">
-              To protect children and provide quality education by empowering youth and young women through skills, resilient livelihoods, and
-              environmental conservation.
+              Safe Guarding children, empowering youths and women, and conserving the environment for resilient livelihoods.
              
             </p>
           </div>
