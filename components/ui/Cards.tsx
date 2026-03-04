@@ -8,12 +8,38 @@ const COMMON_CBO_STATEMENT = "Perur Rays of Hope CBO";
 // Fallback images for blog posts when no featured image is available
 const blogFallbackImages = [
   siteImages.gallery[0],
-  siteImages.gallery[1], 
+  siteImages.gallery[1],
   siteImages.gallery[2],
   siteImages.gallery[3],
   siteImages.gallery[4],
   siteImages.gallery[5]
 ];
+
+function getBlogFallbackImage(post: BlogPost, index: number) {
+  const category = (post.category || "").toLowerCase();
+  const title = post.title.toLowerCase();
+
+  if (category.includes("women") || title.includes("women") || title.includes("girls")) {
+    return siteImages.blog.women;
+  }
+
+  if (category.includes("environment") || title.includes("climate") || title.includes("soil") || title.includes("tree")) {
+    return siteImages.blog.environment;
+  }
+
+  if (
+    category.includes("child") ||
+    category.includes("education") ||
+    category.includes("youth") ||
+    title.includes("child") ||
+    title.includes("school") ||
+    title.includes("youth")
+  ) {
+    return siteImages.blog.child;
+  }
+
+  return blogFallbackImages[index % blogFallbackImages.length];
+}
 
 export function ProgramCard({ program, index = 0 }: { program: Program; index?: number }) {
   const fallbackImage = blogFallbackImages[index % blogFallbackImages.length];
@@ -41,7 +67,7 @@ export function ProgramCard({ program, index = 0 }: { program: Program; index?: 
 }
 
 export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }) {
-  const fallbackImage = blogFallbackImages[index % blogFallbackImages.length];
+  const fallbackImage = getBlogFallbackImage(post, index);
   
   return (
     <article className="overflow-hidden rounded-xl2 bg-white shadow-soft">

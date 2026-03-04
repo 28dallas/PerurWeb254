@@ -59,9 +59,9 @@ export const siteImages = {
     finance: "/images/og-default.jpg"
   },
   blog: {
-    child: "/images/og-default.jpg",
-    women: "/images/og-default.jpg",
-    environment: "/images/og-default.jpg"
+    child: "/images/lux/pexels-rdne-6646944.jpg",
+    women: "/images/lux/pexels-yelenaodintsova-10204173.jpg",
+    environment: "/images/lux/pexels-markusspiske-2990617.jpg"
   },
   events: {
     forum: "/images/og-default.jpg",
