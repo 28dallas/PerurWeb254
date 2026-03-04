@@ -130,7 +130,7 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
                 <div className="relative h-48 w-full bg-softGray">
                   <Image
                     src={cardImage}
-                    alt={event.image.alt || event.title}
+                    alt={event.image?.alt || event.title}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
