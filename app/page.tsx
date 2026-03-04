@@ -25,17 +25,18 @@ export default async function HomePage() {
       <Section title="Vision & Mission" subtitle="A Resilient and Empowered Community.">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-xl2 bg-softGray p-6">
+            <h3 className="text-xl font-semibold text-brandBlue">Vision</h3>
+            <p className="mt-2 text-slate-700">
+             A resilient and empowered community led by skilled women and youth, committed to safeguarding children and preserving the environment
+              for sustainable development.
+            </p>
+          </div>
+          <div className="rounded-xl2 bg-softGray p-6">
             <h3 className="text-xl font-semibold text-brandBlue">Mission</h3>
             <p className="mt-2 text-slate-700">
               To protect children and provide quality education by empowering youth and young women through skills, resilient livelihoods, and
               environmental conservation.
-            </p>
-          </div>
-          <div className="rounded-xl2 bg-softGray p-6">
-            <h3 className="text-xl font-semibold text-brandBlue">Vision</h3>
-            <p className="mt-2 text-slate-700">
-              A resilient and empowered community led by skilled women and youth, committed to safeguarding children and preserving the environment
-              for sustainable development.
+             
             </p>
           </div>
         </div>
