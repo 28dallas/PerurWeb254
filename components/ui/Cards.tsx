@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost, Program, TeamMember } from "@/lib/types";
-import { formatDate } from "@/lib/utils";
 import { siteImages } from "@/lib/site-images";
 
 const COMMON_CBO_STATEMENT = "Perur Rays of Hope CBO";
