@@ -11,6 +11,11 @@ const formSchema = z.object({
   token: z.string().min(10)
 });
 
+function isPlaceholderEnvValue(value: string) {
+  const v = value.trim().toLowerCase();
+  return v === "placeholder" || v.startsWith("your_") || v.includes("example.com");
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -20,7 +25,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid form data" }, { status: 400 });
     }
 
-    const secret = process.env.RECAPTCHA_SECRET_KEY;
+    const rawSecret = process.env.RECAPTCHA_SECRET_KEY;
+    const secret = rawSecret && !isPlaceholderEnvValue(rawSecret) ? rawSecret : undefined;
     if (secret && parsed.data.token !== "placeholder-token") {
       const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
         method: "POST",

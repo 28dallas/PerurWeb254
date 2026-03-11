@@ -19,6 +19,15 @@ const schema = z.object({
 });
 
 export function ValidatedForm({ title, formType }: ValidatedFormProps) {
+  const rawRecaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY?.trim();
+  const recaptchaSiteKey =
+    rawRecaptchaSiteKey &&
+    !/^your_recaptcha_site_key$/i.test(rawRecaptchaSiteKey) &&
+    !/^placeholder$/i.test(rawRecaptchaSiteKey)
+      ? rawRecaptchaSiteKey
+      : undefined;
+  const recaptchaEnabled = !!recaptchaSiteKey;
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -29,7 +38,13 @@ export function ValidatedForm({ title, formType }: ValidatedFormProps) {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    const parsed = schema.safeParse({ name, email, message, consent, token: token || "placeholder-token" });
+    const parsed = schema.safeParse({
+      name,
+      email,
+      message,
+      consent,
+      token: recaptchaEnabled ? token : "placeholder-token"
+    });
     if (!parsed.success) {
       setStatus("error");
       return;
@@ -116,12 +131,11 @@ export function ValidatedForm({ title, formType }: ValidatedFormProps) {
           />
           I consent to secure processing of my data in line with the Data Protection Notice.
         </label>
-        <div className="overflow-x-auto">
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "placeholder"}
-            onChange={(v: string | null) => setToken(v || "")}
-          />
-        </div>
+        {recaptchaEnabled ? (
+          <div className="overflow-x-auto">
+            <ReCAPTCHA sitekey={recaptchaSiteKey} onChange={(v: string | null) => setToken(v || "")} />
+          </div>
+        ) : null}
         <Button type="submit" variant="primary" disabled={status === "loading"}>
           {status === "loading" ? "Submitting..." : "Submit"}
         </Button>
