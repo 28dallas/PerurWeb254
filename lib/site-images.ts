@@ -43,7 +43,7 @@ const selectedLuxImages = [
 ];
 
 export const siteImages = {
-  logo: "/images/logo2.png",
+  logo: "/icons/logo.jpg",
   hero: "/images/og-default.jpg",
   cta: "/images/og-default.jpg",
   programs: {

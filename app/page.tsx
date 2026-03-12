@@ -10,9 +10,11 @@ import { getBlogPosts, getTestimonials } from "@/lib/sanity/fetchers";
 import Image from "next/image";
 
 const partners = [
-  { name: "World Vision", logo: "/images/partners/wv.png" },
-  { name: "Global Give Back Circle", logo: "/images/partners/gb.png" },
-  { name: "Microsoft", logo: "/images/partners/microsoft.svg" }
+  { name: "Global Give Back Circle (GGBC)", logo: "/images/logo/gb.png" },
+  { name: "Mastercard Foundation", logo: "/images/logo/images.jpeg" },
+  { name: "Circle Group Limited (CGL)", logo: "/images/logo/circle.png" },
+  { name: "International Tree Foundation (ITF)", logo: "/images/logo/itf.jpg" },
+  { name: "Mekuno Project", logo: "/images/logo/ms.png" }
 ];
 
 const homeBlogCardImages = [
