@@ -89,7 +89,7 @@ export default async function ProgramsPage() {
 
       <Section>
         <h3 className="mb-4 text-xl font-semibold text-brandBlue">Program Gallery</h3>
-        <InteractiveGallery images={siteImages.gallery.slice(0, 24)} />
+        <InteractiveGallery images={siteImages.gallery.slice(0, 12)} />
       </Section>
     </>
   );

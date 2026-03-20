@@ -19,7 +19,7 @@ export default function GetInvolvedPage() {
       <Section>
         <h3 className="mb-4 text-xl font-semibold text-brandBlue">Get Involved Gallery</h3>
         <InteractiveGallery
-          images={siteImages.gallery.slice(0, 12)}
+          images={siteImages.gallery.slice(0, 8)}
         />
       </Section>
     </>

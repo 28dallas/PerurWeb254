@@ -5,25 +5,16 @@ const selectedNewImages = [
   "/images/new/photo_8_2026-03-03_11-10-37.jpg",
   "/images/new/photo_12_2026-03-03_11-10-37.jpg",
   "/images/new/photo_15_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_18_2026-03-03_11-10-37.jpg",
   "/images/new/photo_22_2026-03-03_11-10-37.jpg",
   "/images/new/photo_25_2026-03-03_11-10-37.jpg",
   "/images/new/photo_30_2026-03-03_11-10-37.jpg",
   "/images/new/photo_35_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_40_2026-03-03_11-10-37.jpg",
   "/images/new/photo_45_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_50_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_55_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_60_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_65_2026-03-03_11-10-37.jpg",
   "/images/new/photo_70_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_75_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_80_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_85_2026-03-03_11-10-37.jpg",
-  "/images/new/photo_90_2026-03-03_11-10-37.jpg"
+  "/images/new/photo_80_2026-03-03_11-10-37.jpg"
 ];
 
-// Curated selection from lux folder
+// Curated selection from lux folder (Not used in Gallery to focus on original impact)
 const selectedLuxImages = [
   "/images/lux/pexels-lagosfoodbank-6472487.jpg",
   "/images/lux/pexels-lagosfoodbank-9090854.jpg",
@@ -39,7 +30,6 @@ const selectedLuxImages = [
   "/images/lux/pexels-planeteelevene-3848184.jpg",
   "/images/lux/pexels-markusspiske-2990617.jpg",
   "/images/lux/pexels-august-de-richelieu-4427622.jpg",
-
 ];
 
 export const siteImages = {
@@ -68,8 +58,7 @@ export const siteImages = {
     youth: "/images/new/photo_80_2026-03-03_11-10-37.jpg"
   },
   gallery: [
-    // Mix of both folders for variety
-    ...selectedNewImages,
-    ...selectedLuxImages
+    // Focused on original photos showing real impact
+    ...selectedNewImages
   ]
 } as const;
