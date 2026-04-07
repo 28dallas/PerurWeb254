@@ -1,4 +1,4 @@
-import type { BlogPost, BlogPostDetail, Event, Program, Resource, SiteSettings, TeamMember, Testimonial } from "@/lib/types";
+import type { BlogPost, BlogPostDetail, Event, HomepageContent, Program, Resource, SiteSettings, TeamMember, Testimonial } from "@/lib/types";
 import { hasSanityConfig, sanityClient } from "./client";
 import {
   blogPostBySlugQuery,
@@ -15,6 +15,7 @@ import {
 } from "./queries";
 import {
   fallbackEvents,
+  fallbackHomepageData,
   fallbackPosts,
   fallbackPrograms,
   fallbackResources,
@@ -27,7 +28,8 @@ async function safeFetch<T>(query: string, params: Record<string, unknown> = {},
   if (!hasSanityConfig) return fallback;
 
   try {
-    return await sanityClient.fetch<T>(query, params);
+    const result = await sanityClient.fetch<T | null>(query, params);
+    return (result ?? fallback) as T;
   } catch {
     return fallback;
   }
@@ -73,7 +75,7 @@ export async function getTestimonials() {
 }
 
 export async function getHomepageData() {
-  return safeFetch<Record<string, unknown> | null>(homepageQuery, {}, null);
+  return safeFetch<HomepageContent>(homepageQuery, {}, fallbackHomepageData);
 }
 
 export async function getSiteSettings() {

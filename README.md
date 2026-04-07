@@ -161,5 +161,6 @@ Defined in `lib/sanity/queries/index.ts`:
 
 - `docs/WEBSITE_DEVELOPMENT_PLAN.md`
 - `docs/TRAINING_HANDOVER_GUIDE.md`
+- `docs/STAFF_SANITY_ACCESS_SHEET.md`
 - `docs/MAINTENANCE_SUPPORT_PLAN.md`
 - `docs/QA_TEST_REPORT.md`

@@ -14,24 +14,6 @@ const selectedNewImages = [
   "/images/new/photo_80_2026-03-03_11-10-37.jpg"
 ];
 
-// Curated selection from lux folder (Not used in Gallery to focus on original impact)
-const selectedLuxImages = [
-  "/images/lux/pexels-lagosfoodbank-6472487.jpg",
-  "/images/lux/pexels-lagosfoodbank-9090854.jpg",
-  "/images/lux/pexels-lara-jameson-8899031.jpg",
-  "/images/lux/pexels-max-fischer-5212318.jpg",
-  "/images/lux/pexels-rdne-6257693.jpg",
-  "/images/lux/pexels-rdne-6646944.jpg",
-  "/images/lux/pexels-rdne-6647112.jpg",
-  "/images/lux/pexels-shvetsa-3746309.jpg",
-  "/images/lux/pexels-vlada-karpovich-4668360.jpg",
-  "/images/lux/pexels-yelenaodintsova-10204173.jpg",
-  "/images/lux/pexels-yelenaodintsova-10204176.jpg",
-  "/images/lux/pexels-planeteelevene-3848184.jpg",
-  "/images/lux/pexels-markusspiske-2990617.jpg",
-  "/images/lux/pexels-august-de-richelieu-4427622.jpg",
-];
-
 export const siteImages = {
   logo: "/icons/logo.jpg",
   hero: "/images/og-default.jpg",

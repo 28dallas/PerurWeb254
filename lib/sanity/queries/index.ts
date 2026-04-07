@@ -3,13 +3,27 @@ import { groq } from "next-sanity";
 export const siteSettingsQuery = groq`*[_type == "siteSettings"][0]`;
 
 export const homepageQuery = groq`*[_type == "homepage"][0]{
+  heroEyebrow,
   heroTitle,
   heroSubtitle,
   heroImage,
+  visionTitle,
+  visionText,
+  missionTitle,
+  missionText,
+  impactTitle,
+  impactSubtitle,
   impactStats,
   successStory,
+  storiesTitle,
+  storiesSubtitle,
   ctaTitle,
-  ctaText
+  ctaText,
+  ctaPrimaryLabel,
+  ctaPrimaryHref,
+  ctaSecondaryLabel,
+  ctaSecondaryHref,
+  ctaImage
 }`;
 
 export const aboutPageQuery = groq`*[_type == "aboutPage"][0]{

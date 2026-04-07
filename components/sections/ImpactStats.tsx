@@ -1,14 +1,15 @@
 import { AnimatedInView } from "@/components/ui/AnimatedInView";
 import { ImpactChart } from "@/components/ui/ImpactChart";
+import type { ImpactStat } from "@/lib/types";
 
-const stats = [
+const defaultStats: ImpactStat[] = [
   { label: "Children supported", value: "1,500+" },
   { label: "Youth skilled (18+)", value: "620+" },
   { label: "Women in savings groups", value: "480+" },
   { label: "Trees planted", value: "35,000+" }
 ];
 
-export function ImpactStats() {
+export function ImpactStats({ stats = defaultStats }: { stats?: ImpactStat[] }) {
   return (
     <div className="flex flex-col gap-10">
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

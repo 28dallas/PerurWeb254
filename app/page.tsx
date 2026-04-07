@@ -6,7 +6,8 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ImpactStats } from "@/components/sections/ImpactStats";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
-import { getBlogPosts, getTestimonials } from "@/lib/sanity/fetchers";
+import { getBlogPosts, getHomepageData, getTestimonials } from "@/lib/sanity/fetchers";
+import { urlFor } from "@/lib/sanity/client";
 import Image from "next/image";
 
 const partners = [
@@ -24,49 +25,66 @@ const homeBlogCardImages = [
 ];
 
 export default async function HomePage() {
-  const [posts, testimonials] = await Promise.all([getBlogPosts(), getTestimonials()]);
+  const [posts, testimonials, homepage] = await Promise.all([getBlogPosts(), getTestimonials(), getHomepageData()]);
+  const heroImageSrc = homepage.heroImage?.asset?._ref
+    ? urlFor(homepage.heroImage).width(1600).height(1000).url()
+    : homepage.heroImage?.asset?.url;
+  const ctaImageSrc = homepage.ctaImage?.asset?._ref
+    ? urlFor(homepage.ctaImage).width(1600).height(900).url()
+    : homepage.ctaImage?.asset?.url;
 
   return (
     <>
-      <HeroSection />
+      <HeroSection
+        eyebrow={homepage.heroEyebrow}
+        title={homepage.heroTitle || "Perur Rays of Hope"}
+        subtitle={homepage.heroSubtitle || ""}
+        imageSrc={heroImageSrc}
+      />
 
-      <Section title="Vision & Mission" subtitle="Founded in 2014 .">
+      <Section title="Vision & Mission" subtitle="Founded in 2014.">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-xl2 bg-softGray p-6">
-            <h3 className="text-xl font-semibold text-brandBlue"></h3>
+            <h3 className="text-xl font-semibold text-brandBlue">{homepage.visionTitle}</h3>
             <p className="mt-2 text-slate-700">
-             A resilient and empowered community 
+              {homepage.visionText}
             </p>
           </div>
           <div className="rounded-xl2 bg-softGray p-6">
-            <h3 className="text-xl font-semibold text-brandBlue"></h3>
+            <h3 className="text-xl font-semibold text-brandBlue">{homepage.missionTitle}</h3>
             <p className="mt-2 text-slate-700">
-              Safe Guarding children, empowering youths and women, and conserving the environment for resilient livelihoods.
-             
+              {homepage.missionText}
             </p>
           </div>
         </div>
       </Section>
 
-      
-      <Section className="bg-softGray" title="Impact at a Glance">
-        <ImpactStats />
+      <Section className="bg-softGray" title={homepage.impactTitle} subtitle={homepage.impactSubtitle}>
+        <ImpactStats stats={homepage.impactStats} />
       </Section>
 
-      <Section title="Stories of Change" subtitle="Voices from communities we serve.">
+      <Section
+        title={homepage.storiesTitle || "Stories of Change"}
+        subtitle={homepage.storiesSubtitle || homepage.successStory}
+      >
         <TestimonialCarousel testimonials={testimonials} />
       </Section>
 
       <PageHero
-        title="Join us in building resilient livelihoods"
-        description="Your support helps children thrive, youth gain skills, women grow enterprises, and communities adapt to climate risks."
+        title={homepage.ctaTitle || "Join us in building resilient livelihoods"}
+        description={homepage.ctaText || ""}
+        imageSrc={ctaImageSrc}
       >
         <div className="flex flex-wrap gap-3">
-          <Button href="/donate" variant="secondary">
-            Donate Now
+          <Button href={homepage.ctaPrimaryHref || "/donate"} variant="secondary">
+            {homepage.ctaPrimaryLabel || "Donate Now"}
           </Button>
-          <Button href="/get-involved" variant="ghost" className="bg-white/10 text-white ring-white/30 hover:bg-white hover:text-brandBlue">
-            Become a Partner
+          <Button
+            href={homepage.ctaSecondaryHref || "/get-involved"}
+            variant="ghost"
+            className="bg-white/10 text-white ring-white/30 hover:bg-white hover:text-brandBlue"
+          >
+            {homepage.ctaSecondaryLabel || "Become a Partner"}
           </Button>
         </div>
       </PageHero>

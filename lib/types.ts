@@ -15,6 +15,30 @@ export interface ImpactStat {
   value: string;
 }
 
+export interface HomepageContent {
+  heroEyebrow?: string;
+  heroTitle?: string;
+  heroSubtitle?: string;
+  heroImage?: ImageAsset;
+  visionTitle?: string;
+  visionText?: string;
+  missionTitle?: string;
+  missionText?: string;
+  impactTitle?: string;
+  impactSubtitle?: string;
+  impactStats?: ImpactStat[];
+  successStory?: string;
+  storiesTitle?: string;
+  storiesSubtitle?: string;
+  ctaTitle?: string;
+  ctaText?: string;
+  ctaPrimaryLabel?: string;
+  ctaPrimaryHref?: string;
+  ctaSecondaryLabel?: string;
+  ctaSecondaryHref?: string;
+  ctaImage?: ImageAsset;
+}
+
 export interface Program {
   _id: string;
   title: string;

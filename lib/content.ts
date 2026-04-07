@@ -1,5 +1,35 @@
-import type { BlogPost, Event, Program, Resource, SiteSettings, TeamMember, Testimonial } from "./types";
+import type { BlogPost, Event, HomepageContent, Program, Resource, SiteSettings, TeamMember, Testimonial } from "./types";
 import { siteImages } from "./site-images";
+
+export const fallbackHomepageData: HomepageContent = {
+  heroEyebrow: "West Pokot, Kenya",
+  heroTitle: "Empowering women, protecting children, and fostering a sustainable environment in West Pokot County, Kenya.",
+  heroSubtitle:
+    "Perur Rays of Hope is a community-based organization dedicated to empowering women, protecting children, promoting education, and conserving the environment in West Pokot County.",
+  heroImage: { asset: { url: siteImages.hero }, alt: "Perur Rays of Hope community work" },
+  visionTitle: "Vision",
+  visionText: "A resilient and empowered community",
+  missionTitle: "Mission",
+  missionText: "Safe guarding children, empowering youths and women, and conserving the environment for resilient livelihoods.",
+  impactTitle: "Impact at a Glance",
+  impactSubtitle: "A snapshot of our reach across child protection, youth empowerment, women-led livelihoods, and environmental action.",
+  impactStats: [
+    { label: "Children supported", value: "1,500+" },
+    { label: "Youth skilled (18+)", value: "620+" },
+    { label: "Women in savings groups", value: "480+" },
+    { label: "Trees planted", value: "35,000+" }
+  ],
+  storiesTitle: "Stories of Change",
+  storiesSubtitle: "Voices from communities we serve.",
+  successStory: "Voices from communities we serve.",
+  ctaTitle: "Join us in building resilient livelihoods",
+  ctaText: "Your support helps children thrive, youth gain skills, women grow enterprises, and communities adapt to climate risks.",
+  ctaPrimaryLabel: "Donate Now",
+  ctaPrimaryHref: "/donate",
+  ctaSecondaryLabel: "Become a Partner",
+  ctaSecondaryHref: "/get-involved",
+  ctaImage: { asset: { url: siteImages.cta }, alt: "Community members participating in PRoH activities" }
+};
 
 export const fallbackPrograms: Program[] = [
   {
