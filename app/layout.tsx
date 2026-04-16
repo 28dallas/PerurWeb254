@@ -71,7 +71,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-7586264347899672" />
+      </head>
       <body>
         <a
           href="#main-content"
