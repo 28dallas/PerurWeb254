@@ -71,14 +71,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7586264347899672"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      </head>
+      <head></head>
       <body>
         <a
           href="#main-content"
@@ -89,6 +82,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7586264347899672"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Script id="org-schema" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify(organizationSchema)}
         </Script>
