@@ -73,6 +73,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <meta name="google-adsense-account" content="ca-pub-7586264347899672" />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7586264347899672"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
       </head>
       <body>
         <a
@@ -84,12 +90,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7586264347899672"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <Script id="org-schema" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify(organizationSchema)}
         </Script>
