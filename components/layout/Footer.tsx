@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { siteImages } from "@/lib/site-images";
 import { getSiteSettings } from "@/lib/sanity/fetchers";
 
@@ -13,7 +14,7 @@ const quickLinks = [
 
 export async function Footer() {
   const siteSettings = await getSiteSettings();
-  const instagramFallback = "https://www.instagram.com/perurraysofhope?igsh=dXBobGY2MXBuZGtu";
+  const instagramFallback = "https://www.instagram.com/perurrayofhope?igsh=MWRwc200ZXdrYnB1cQ==";
   const contactEmail = siteSettings?.email || "info@perurraysofhope.org";
   const contactPhone = siteSettings?.phone || "+254 724578225";
   const contactAddress = siteSettings?.address || "West Pokot County, Kenya";
@@ -21,7 +22,8 @@ export async function Footer() {
   const socialLinks = [
     { label: "Facebook", href: siteSettings?.socialLinks?.facebook, icon: <FaFacebookF /> },
     { label: "Instagram", href: siteSettings?.socialLinks?.instagram || instagramFallback, icon: <FaInstagram /> },
-    { label: "LinkedIn", href: siteSettings?.socialLinks?.linkedin, icon: <FaLinkedinIn /> }
+    { label: "LinkedIn", href: siteSettings?.socialLinks?.linkedin, icon: <FaLinkedinIn /> },
+    { label: "X", href: siteSettings?.socialLinks?.x, icon: <FaXTwitter /> }
   ].filter((item) => Boolean(item.href));
 
   return (
@@ -61,7 +63,7 @@ export async function Footer() {
             rel="noreferrer"
             className="mt-2 inline-block text-sm text-slate-200 hover:text-brandOrange"
           >
-            @perurraysofhope
+            @perurrayofhope
           </a>
           {socialLinks.length > 0 && (
             <div className="mt-4 flex gap-3">
