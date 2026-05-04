@@ -12,6 +12,7 @@ const quickLinks = [
   { href: "/policies", label: "Policies" }
 ];
 
+// Social media links with fallback URLs
 export async function Footer() {
   const siteSettings = await getSiteSettings();
   const instagramFallback = "https://www.instagram.com/perurrayofhope?igsh=MWRwc200ZXdrYnB1cQ==";
