@@ -15,15 +15,17 @@ const quickLinks = [
 export async function Footer() {
   const siteSettings = await getSiteSettings();
   const instagramFallback = "https://www.instagram.com/perurrayofhope?igsh=MWRwc200ZXdrYnB1cQ==";
+  const facebookFallback = "https://www.facebook.com/share/18huRdaCSr/";
+  const xFallback = "https://x.com/PerurRayofHope";
   const contactEmail = siteSettings?.email || "info@perurraysofhope.org";
   const contactPhone = siteSettings?.phone || "+254 724578225";
   const contactAddress = siteSettings?.address || "West Pokot County, Kenya";
 
   const socialLinks = [
-    { label: "Facebook", href: siteSettings?.socialLinks?.facebook, icon: <FaFacebookF /> },
+    { label: "Facebook", href: siteSettings?.socialLinks?.facebook || facebookFallback, icon: <FaFacebookF /> },
     { label: "Instagram", href: siteSettings?.socialLinks?.instagram || instagramFallback, icon: <FaInstagram /> },
     { label: "LinkedIn", href: siteSettings?.socialLinks?.linkedin, icon: <FaLinkedinIn /> },
-    { label: "X", href: siteSettings?.socialLinks?.x, icon: <FaXTwitter /> }
+    { label: "X", href: siteSettings?.socialLinks?.x || xFallback, icon: <FaXTwitter /> }
   ].filter((item) => Boolean(item.href));
 
   return (
