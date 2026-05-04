@@ -15,18 +15,19 @@ const quickLinks = [
 // Social media links with fallback URLs
 export async function Footer() {
   const siteSettings = await getSiteSettings();
-  const instagramFallback = "https://www.instagram.com/perurrayofhope?igsh=MWRwc200ZXdrYnB1cQ==";
-  const facebookFallback = "https://www.facebook.com/share/18huRdaCSr/";
-  const xFallback = "https://x.com/PerurRayofHope";
+  // Use the correct social media URLs directly
+  const facebookUrl = "https://www.facebook.com/share/18huRdaCSr/";
+  const instagramUrl = "https://www.instagram.com/perurrayofhope?igsh=MWRwc200ZXdrYnB1cQ==";
+  const xUrl = "https://x.com/PerurRayofHope";
   const contactEmail = siteSettings?.email || "info@perurraysofhope.org";
   const contactPhone = siteSettings?.phone || "+254 724578225";
   const contactAddress = siteSettings?.address || "West Pokot County, Kenya";
 
   const socialLinks = [
-    { label: "Facebook", href: siteSettings?.socialLinks?.facebook || facebookFallback, icon: <FaFacebookF /> },
-    { label: "Instagram", href: siteSettings?.socialLinks?.instagram || instagramFallback, icon: <FaInstagram /> },
+    { label: "Facebook", href: facebookUrl, icon: <FaFacebookF /> },
+    { label: "Instagram", href: instagramUrl, icon: <FaInstagram /> },
     { label: "LinkedIn", href: siteSettings?.socialLinks?.linkedin, icon: <FaLinkedinIn /> },
-    { label: "X", href: siteSettings?.socialLinks?.x || xFallback, icon: <FaXTwitter /> }
+    { label: "X", href: xUrl, icon: <FaXTwitter /> }
   ].filter((item) => Boolean(item.href));
 
   return (
@@ -61,7 +62,7 @@ export async function Footer() {
           <p className="text-sm">{contactEmail}</p>
           <p className="text-sm">{contactPhone}</p>
           <a
-            href={siteSettings?.socialLinks?.instagram || instagramFallback}
+            href={instagramUrl}
             target="_blank"
             rel="noreferrer"
             className="mt-2 inline-block text-sm text-slate-200 hover:text-brandOrange"
