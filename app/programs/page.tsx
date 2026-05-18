@@ -15,7 +15,7 @@ export default async function ProgramsPage() {
     <>
       <PageHero
         title="Programs"
-        description="Child Protection,Women Empowerment, Youth Empowerment,  Education, and Environmental Conservation."
+        description="Child Protection, Women Empowerment, Youth Empowerment, Education, Environmental Conservation, and program news."
       />
 
       <Section>

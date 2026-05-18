@@ -12,7 +12,7 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/programs", label: "Programs" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Blog & Careers" },
   { href: "/events", label: "Events" },
   { href: "/resources", label: "Resources" },
   { href: "/get-involved", label: "Get Involved" },
@@ -25,9 +25,9 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between container-padding py-4" aria-label="Main navigation">
-        <Link href="/" className="flex items-center gap-3" aria-label="Perur Rays of Hope home">
-          <Image src={siteImages.logo} alt="Perur Rays of Hope logo" width={44} height={44} className="rounded-full object-cover" />
-          <span className="text-base font-bold text-brandBlue sm:text-lg">Perur Rays of Hope</span>
+        <Link href="/" className="flex items-center gap-4" aria-label="Perur Rays of Hope home">
+          <Image src={siteImages.logo} alt="Perur Rays of Hope logo" width={56} height={56} className="rounded-full object-cover" />
+          <span className="text-base font-bold text-brandBlue sm:text-xl">Perur Rays of Hope</span>
         </Link>
 
         <div className="hidden items-center gap-6 lg:flex">
