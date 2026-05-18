@@ -35,7 +35,7 @@ export async function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 container-padding py-12 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-4">
-            <Image src={siteImages.logo} alt="Perur Rays of Hope logo" width={56} height={56} className="rounded-full object-cover" />
+            <Image src={siteImages.logo} alt="Perur Rays of Hope logo" width={72} height={72} className="rounded-full object-cover" />
             <h3 className="text-2xl font-bold">Perur Rays of Hope</h3>
           </div>
           <p className="mt-3 text-sm text-slate-200">

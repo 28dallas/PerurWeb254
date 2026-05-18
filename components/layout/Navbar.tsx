@@ -26,7 +26,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between container-padding py-4" aria-label="Main navigation">
         <Link href="/" className="flex items-center gap-4" aria-label="Perur Rays of Hope home">
-          <Image src={siteImages.logo} alt="Perur Rays of Hope logo" width={56} height={56} className="rounded-full object-cover" />
+          <Image src={siteImages.logo} alt="Perur Rays of Hope logo" width={72} height={72} className="rounded-full object-cover" />
           <span className="text-base font-bold text-brandBlue sm:text-xl">Perur Rays of Hope</span>
         </Link>
 

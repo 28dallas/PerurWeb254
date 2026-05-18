@@ -13,7 +13,7 @@ import Image from "next/image";
 const partners = [
   { name: "Global Give Back Circle (GGBC)", logo: "/images/logo/gb.png" },
   { name: "Mastercard Foundation", logo: "/images/logo/images.jpeg" },
-  { name: "Circle Group Limited (CGL)", logo: "/images/logo/CIRCLE GROUP (CGL) Logo copy.pdf" },
+  { name: "Circle Group (CGL)", logo: "/images/logo/circle group.jpg" },
   { name: "International Tree Foundation (ITF)", logo: "/images/logo/itf.jpg" },
   { name: "Mekuno Project", logo: "/images/logo/ms.png" }
 ];
