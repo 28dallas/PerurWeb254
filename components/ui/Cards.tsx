@@ -83,7 +83,7 @@ export function BlogCard({ post, index = 0, imageOverride }: { post: BlogPost; i
       <div className="p-5">
         <p className="text-xs font-medium uppercase tracking-wide text-brandGreen">{post.category || "News"}</p>
         <h3 className="mt-2 text-lg font-semibold text-brandBlue">{post.title}</h3>
-        <p className="mt-3 text-sm text-slate-600">{COMMON_CBO_STATEMENT}</p>
+        <p className="mt-3 text-sm text-slate-600">{post.excerpt || COMMON_CBO_STATEMENT}</p>
         <Link href={`/blog/${post.slug.current}`} className="mt-4 inline-block text-sm font-semibold text-brandBlue">
           Read article
         </Link>

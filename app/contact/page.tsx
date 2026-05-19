@@ -24,8 +24,9 @@ export default function ContactPage() {
               <div className="mt-2 overflow-hidden rounded-xl2 border border-slate-200 bg-white">
                 <iframe
                   title="Perur Rays of Hope location map"
-                  src="https://www.google.com/maps?q=Kapenguria%2C%20West%20Pokot%20County%2C%20Kenya&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1207.9036483221757!2d35.268426975777!3d1.3920361405554158!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1782490050b529e1%3A0x9ae3ca3fbfa878d2!2sPerur%20Rays%20of%20Hope!5e0!3m2!1sen!2sus!4v1779190910229!5m2!1sen!2sus"
                   className="h-56 w-full"
+                  allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />

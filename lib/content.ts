@@ -4,8 +4,7 @@ import { siteImages } from "./site-images";
 export const fallbackHomepageData: HomepageContent = {
   heroEyebrow: "West Pokot, Kenya",
   heroTitle: "Empowering women, protecting children, and fostering a sustainable environment in West Pokot County, Kenya.",
-  heroSubtitle:
-    "Perur Rays of Hope is a community-based organization dedicated to empowering women, protecting children, promoting education, and conserving the environment in West Pokot County.",
+  heroSubtitle: "",
   heroImage: { asset: { url: siteImages.hero }, alt: "Perur Rays of Hope community work" },
   visionTitle: "Vision",
   visionText: "A resilient and empowered community",
@@ -182,7 +181,9 @@ export const fallbackEvents: Event[] = [
 export const fallbackResources: Resource[] = [
   { _id: "resource-1", title: "Annual Report 2025", category: "Annual Reports", fileUrl: "#" },
   { _id: "resource-2", title: "Child Protection Policy", category: "Policies", fileUrl: "#" },
-  { _id: "resource-3", title: "Safeguarding Guidelines", category: "Guidelines", fileUrl: "#" }
+  { _id: "resource-3", title: "Safeguarding Guidelines", category: "Guidelines", fileUrl: "#" },
+  { _id: "resource-4", title: "Entrepreneurship Trainer Job Description", category: "Careers", fileUrl: "/jobs/entrepreneurship-trainer.pdf" },
+  { _id: "resource-5", title: "Solar PV Installation Trainer Job Description", category: "Careers", fileUrl: "/jobs/solar-pv-installation-trainer.pdf" }
 ];
 
 export const fallbackTestimonials: Testimonial[] = [

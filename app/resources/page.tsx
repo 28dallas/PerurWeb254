@@ -19,7 +19,21 @@ export default async function ResourcesPage({ searchParams }: ResourcesPageProps
   return (
     <>
       <PageHero title="Resources" description="Download annual reports, policies, and guidance materials." />
-      <Section>
+
+      <Section title="Resource library" subtitle="Find key documents, policies, guidelines, and current career downloads in one place.">
+        <div className="mb-8 grid gap-4 md:grid-cols-3">
+          {[
+            ["Reports", "Annual updates and public accountability documents."],
+            ["Policies", "Safeguarding, protection, and governance materials."],
+            ["Careers", "Current job descriptions and application documents."]
+          ].map(([title, description]) => (
+            <article key={title} className="rounded-xl2 bg-white p-5 shadow-soft">
+              <h2 className="text-base font-semibold text-brandBlue">{title}</h2>
+              <p className="mt-2 text-sm text-slate-600">{description}</p>
+            </article>
+          ))}
+        </div>
+
         <div className="mb-6 flex flex-wrap gap-2">
           {["All", ...categories].map((category) => {
             const active = selectedCategory === category;
