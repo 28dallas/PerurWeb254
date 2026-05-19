@@ -1,10 +1,12 @@
 import { PageHero } from "@/components/layout/PageHero";
 import { ValidatedForm } from "@/components/forms/ValidatedForm";
 import { Section } from "@/components/ui/Section";
-import { siteImages } from "@/lib/site-images";
+import { getGalleryImages } from "@/lib/gallery-images";
 import InteractiveGallery from "@/components/ui/InteractiveGallery";
 
 export default function GetInvolvedPage() {
+  const galleryImages = getGalleryImages();
+
   return (
     <>
       <PageHero title="Get Involved" description="Volunteer, partner, or intern with PRoH to strengthen community impact." />
@@ -19,7 +21,7 @@ export default function GetInvolvedPage() {
       <Section>
         <h3 className="mb-4 text-xl font-semibold text-brandBlue">Get Involved Gallery</h3>
         <InteractiveGallery
-          images={siteImages.gallery.slice(0, 12)}
+          images={galleryImages.slice(0, 12)}
         />
       </Section>
     </>

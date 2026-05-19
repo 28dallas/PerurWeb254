@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
-import { getBlogPosts, getEvents, getPrograms } from "@/lib/sanity/fetchers";
+import { getBlogPosts } from "@/lib/sanity/fetchers";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [posts, events, programs] = await Promise.all([getBlogPosts(), getEvents(), getPrograms()]);
+  const posts = await getBlogPosts();
 
-  const staticRoutes = ["", "/about", "/programs", "/donate", "/blog", "/events", "/resources", "/get-involved", "/contact", "/policies"].map(
+  const staticRoutes = ["", "/about", "/donate", "/blog", "/careers", "/gallery", "/resources", "/get-involved", "/contact", "/policies"].map(
     (route) => ({
       url: `${SITE_URL}${route}`,
       lastModified: new Date()
@@ -17,15 +17,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: post.publishedAt ? new Date(post.publishedAt) : new Date()
   }));
 
-  const eventRoutes = events.map((event) => ({
-    url: `${SITE_URL}/events/${event.slug.current}`,
-    lastModified: new Date(event.date)
-  }));
-
-  const programRoutes = programs.map((program) => ({
-    url: `${SITE_URL}/programs/${program.slug.current}`,
-    lastModified: new Date()
-  }));
-
-  return [...staticRoutes, ...blogRoutes, ...eventRoutes, ...programRoutes];
+  return [...staticRoutes, ...blogRoutes];
 }

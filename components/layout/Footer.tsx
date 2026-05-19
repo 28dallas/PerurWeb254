@@ -7,7 +7,8 @@ import { getSiteSettings } from "@/lib/sanity/fetchers";
 
 const quickLinks = [
   { href: "/about", label: "About" },
-  { href: "/programs", label: "Programs" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/careers", label: "Careers" },
   { href: "/donate", label: "Donate" },
   { href: "/policies", label: "Policies" }
 ];
@@ -34,8 +35,14 @@ export async function Footer() {
     <footer className="bg-brandBlue text-white">
       <div className="mx-auto grid max-w-7xl gap-10 container-padding py-12 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-4">
-            <Image src={siteImages.logo} alt="Perur Rays of Hope logo" width={72} height={72} className="rounded-full object-cover" />
+          <div className="flex flex-wrap items-center gap-4">
+            <Image
+              src={siteImages.logo}
+              alt="Perur Rays of Hope logo"
+              width={240}
+              height={80}
+              className="h-auto w-48 object-contain sm:w-60"
+            />
             <h3 className="text-2xl font-bold">Perur Rays of Hope</h3>
           </div>
           <p className="mt-3 text-sm text-slate-200">

@@ -8,12 +8,13 @@ import { Newsletter } from "@/components/sections/Newsletter";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 import { getBlogPosts, getHomepageData, getTestimonials } from "@/lib/sanity/fetchers";
 import { urlFor } from "@/lib/sanity/client";
+import { getRayImages } from "@/lib/gallery-images";
 import Image from "next/image";
 
 const partners = [
   { name: "Global Give Back Circle (GGBC)", logo: "/images/logo/gb.png" },
   { name: "Mastercard Foundation", logo: "/images/logo/images.jpeg" },
-  { name: "Circle Group (CGL)", logo: "/images/logo/circle group.jpg" },
+  { name: "Circle Group (CGL)", logo: "/images/logo/Circle Group.jpg" },
   { name: "International Tree Foundation (ITF)", logo: "/images/logo/itf.jpg" },
   { name: "Mekuno Project", logo: "/images/logo/ms.png" }
 ];
@@ -26,6 +27,7 @@ const homeBlogCardImages = [
 
 export default async function HomePage() {
   const [posts, testimonials, homepage] = await Promise.all([getBlogPosts(), getTestimonials(), getHomepageData()]);
+  const heroSlideshowImages = getRayImages().slice(0, 5);
   const heroImageSrc = homepage.heroImage?.asset?._ref
     ? urlFor(homepage.heroImage).width(1600).height(1000).url()
     : homepage.heroImage?.asset?.url;
@@ -40,6 +42,7 @@ export default async function HomePage() {
         title={homepage.heroTitle || "Perur Rays of Hope"}
         subtitle={homepage.heroSubtitle || ""}
         imageSrc={heroImageSrc}
+        imageSrcs={heroSlideshowImages}
       />
 
       <Section title="Vision & Mission" subtitle="Founded in 2014.">
