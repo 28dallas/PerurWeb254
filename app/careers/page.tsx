@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Current career opportunities at Perur Rays of Hope."
 };
 
+const applicationEmail = "info@perurraysofhope.org";
+
 export default function CareersPage() {
   return (
     <>
@@ -45,9 +47,23 @@ export default function CareersPage() {
         title="Current opportunities"
         subtitle="Download each job description PDF for the full terms of reference and application details."
       >
+        <div className="mb-6 rounded-xl2 border border-brandBlue/15 bg-brandBlue/5 p-5 text-sm text-slate-700">
+          If the Apply button does not open your email app, send your CV and documents to{" "}
+          <a href={`mailto:${applicationEmail}`} className="font-semibold text-brandBlue hover:text-brandGreen">
+            {applicationEmail}
+          </a>{" "}
+          and use the job title as the email subject.
+        </div>
+
         <div className="grid gap-6 lg:grid-cols-2">
           {careerRoles.map((role) => (
             <article key={role.title} className="rounded-xl2 border border-slate-200 bg-white p-6 shadow-soft">
+              {role.deadline ? (
+                <div className="mb-5 rounded-xl2 border border-brandOrange/30 bg-brandOrange/10 px-4 py-3 text-sm font-semibold text-slate-800">
+                  Application deadline: {role.deadline}
+                </div>
+              ) : null}
+
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-wide text-brandGreen">{role.department}</p>

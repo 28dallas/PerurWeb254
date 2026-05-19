@@ -39,6 +39,7 @@ export const careerRoles: CareerRole[] = [
       "Ability to facilitate hands-on learning for youth and community groups.",
       "Strong communication, documentation, and safeguarding awareness."
     ],
+    deadline: "20th May 2026",
     pdf: "/jobs/entrepreneurship-trainer.pdf",
     applyHref: applicationHref("Entrepreneurship Trainer")
   },
@@ -58,6 +59,7 @@ export const careerRoles: CareerRole[] = [
       "Experience training youth, apprentices, or community learners is preferred.",
       "Strong safety practice, communication skills, and commitment to quality training."
     ],
+    deadline: "26th May 2026",
     pdf: "/jobs/solar-pv-installation-trainer.pdf",
     applyHref: applicationHref("Solar PV Installation Trainer")
   }

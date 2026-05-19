@@ -27,6 +27,16 @@ export function Button({ children, className, variant = "primary", href, ...prop
   );
 
   if (href) {
+    const isExternalLink = /^(mailto:|tel:|https?:)/.test(href);
+
+    if (isExternalLink) {
+      return (
+        <a href={href} className={baseClass}>
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={baseClass}>
         {children}
