@@ -22,7 +22,7 @@ export default function GalleryPage() {
 
       <Section
         title="Perur Rays in action"
-        subtitle="Images added to public/images/rays appear here automatically, followed by the existing project gallery."
+        subtitle="Perur Rays of Hope is a community-based organization dedicated to empowering women, protecting children, promoting education, and conserving the environment in West Pokot County."
       >
         {rayImages.length === 0 ? (
           <div className="mb-6 rounded-xl2 border border-brandOrange/30 bg-brandOrange/10 p-5 text-sm text-slate-700">

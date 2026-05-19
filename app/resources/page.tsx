@@ -15,6 +15,7 @@ export default async function ResourcesPage({ searchParams }: ResourcesPageProps
   const selectedCategory = searchParams?.category || "All";
   const filteredResources =
     selectedCategory === "All" ? resources : resources.filter((resource) => resource.category === selectedCategory);
+  const availableResources = resources.filter((resource) => resource.fileUrl && resource.fileUrl !== "#").length;
 
   return (
     <>
@@ -23,13 +24,13 @@ export default async function ResourcesPage({ searchParams }: ResourcesPageProps
       <Section title="Resource library" subtitle="Find key documents, policies, guidelines, and current career downloads in one place.">
         <div className="mb-8 grid gap-4 md:grid-cols-3">
           {[
-            ["Reports", "Annual updates and public accountability documents."],
-            ["Policies", "Safeguarding, protection, and governance materials."],
-            ["Careers", "Current job descriptions and application documents."]
+            ["Documents listed", String(resources.length)],
+            ["Ready to download", String(availableResources)],
+            ["Coming soon", String(resources.length - availableResources)]
           ].map(([title, description]) => (
             <article key={title} className="rounded-xl2 bg-white p-5 shadow-soft">
               <h2 className="text-base font-semibold text-brandBlue">{title}</h2>
-              <p className="mt-2 text-sm text-slate-600">{description}</p>
+              <p className="mt-2 text-3xl font-bold text-brandGreen">{description}</p>
             </article>
           ))}
         </div>
@@ -60,7 +61,7 @@ export default async function ResourcesPage({ searchParams }: ResourcesPageProps
                 <h2 className="text-base font-semibold text-brandBlue">{resource.title}</h2>
                 <p className="text-sm text-slate-500">{resource.category}</p>
               </div>
-              {resource.fileUrl ? (
+              {resource.fileUrl && resource.fileUrl !== "#" ? (
                 <a
                   href={resource.fileUrl}
                   className="rounded-xl2 bg-brandBlue px-4 py-2 text-sm font-medium text-white hover:bg-brandGreen"
@@ -69,7 +70,7 @@ export default async function ResourcesPage({ searchParams }: ResourcesPageProps
                   Download PDF
                 </a>
               ) : (
-                <span className="rounded-xl2 bg-slate-200 px-4 py-2 text-sm font-medium text-slate-500">File unavailable</span>
+                <span className="rounded-xl2 bg-slate-200 px-4 py-2 text-sm font-medium text-slate-500">Coming soon</span>
               )}
             </article>
           ))}

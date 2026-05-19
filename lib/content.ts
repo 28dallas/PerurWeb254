@@ -1,5 +1,14 @@
-import type { BlogPost, Event, HomepageContent, Program, Resource, SiteSettings, TeamMember, Testimonial } from "./types";
+import type { BlogPostDetail, Event, HomepageContent, Program, Resource, SiteSettings, TeamMember, Testimonial } from "./types";
 import { siteImages } from "./site-images";
+
+const rayImages = {
+  solarTraining: "/images/rays/photo_2026-05-19_13-57-27.jpg",
+  graduationWide: "/images/rays/photo_2026-05-19_13-57-30.jpg",
+  graduationJoy: "/images/rays/photo_2026-05-19_13-57-34.jpg",
+  graduationWalk: "/images/rays/photo_2026-05-19_13-57-40.jpg",
+  communityGathering: "/images/rays/photo_2026-05-19_13-57-42 (2).jpg",
+  leadership: "/images/rays/photo_2026-05-19_13-57-49.jpg"
+};
 
 export const fallbackHomepageData: HomepageContent = {
   heroEyebrow: "West Pokot, Kenya",
@@ -124,36 +133,78 @@ export const fallbackTeam: TeamMember[] = [
   }
 ];
 
-export const fallbackPosts: BlogPost[] = [
+export const fallbackPosts: BlogPostDetail[] = [
   {
     _id: "post-1",
-    title: "Perur Rays of Hope Environment Day",
-    slug: { current: "perur-rays-of-hope-marks-world-soil-day" },
-    excerpt: "PRoH joined local communities to raise awareness on soil conservation and sustainable land use.",
-    category: "Environment",
-    publishedAt: "2023-12-05",
+    title: "HER Lab West Pokot Graduation Celebrates Youth Skills",
+    slug: { current: "her-lab-west-pokot-graduation-celebrates-youth-skills" },
+    excerpt: "A celebration of young people gaining practical skills, confidence, and pathways toward dignified livelihoods.",
+    category: "Youth Skills",
+    publishedAt: "2026-05-19",
     author: { name: "PRoH Team" },
-    featuredImage: { asset: { url: siteImages.blog.child }, alt: "Community safeguarding discussion" }
+    featuredImage: { asset: { url: rayImages.graduationJoy }, alt: "HER Lab graduates celebrating" },
+    body:
+      "Perur Rays of Hope continues to support youth with practical learning opportunities that strengthen confidence, employability, and community leadership.\n\nThis placeholder story can later be replaced with the full graduation report, names, partner acknowledgements, and learner testimonies."
   },
   {
     _id: "post-2",
-    title: "Empowering Women Through Economic Skills",
-    slug: { current: "empowering-women-through-economic-skills" },
-    excerpt: "Women-led groups continue to grow savings and enterprise resilience through PRoH programming.",
-    category: "Women Empowerment",
-    publishedAt: "2024-11-18",
+    title: "Solar PV Training Opens Clean Energy Pathways",
+    slug: { current: "solar-pv-training-opens-clean-energy-pathways" },
+    excerpt: "Hands-on solar installation training helps learners connect technical skills with local energy needs.",
+    category: "Skills Training",
+    publishedAt: "2026-05-18",
     author: { name: "PRoH Team" },
-    featuredImage: { asset: { url: siteImages.blog.women }, alt: "Women discussing business opportunities" }
+    featuredImage: { asset: { url: rayImages.solarTraining }, alt: "Solar PV installation training" },
+    body:
+      "Technical training is one way PRoH supports practical livelihoods for young people and community members.\n\nThis placeholder story can later include the training objectives, trainer details, participant numbers, and outcomes from the Solar PV installation program."
   },
   {
     _id: "post-3",
-    title: "Greener futures: youth climate action initiatives",
-    slug: { current: "youth-climate-action-initiatives" },
-    excerpt: "Young leaders scale tree nurseries and climate-smart farming demonstrations.",
-    category: "Environment",
-    publishedAt: "2025-08-19",
+    title: "Entrepreneurship Training for Resilient Livelihoods",
+    slug: { current: "entrepreneurship-training-for-resilient-livelihoods" },
+    excerpt: "Business skills, mentorship, and practical planning help youth and women strengthen income opportunities.",
+    category: "Livelihoods",
+    publishedAt: "2026-05-17",
     author: { name: "PRoH Team" },
-    featuredImage: { asset: { url: siteImages.blog.environment }, alt: "Youth involved in conservation work" }
+    featuredImage: { asset: { url: rayImages.graduationWalk }, alt: "Graduates walking at a community event" },
+    body:
+      "Entrepreneurship support helps participants move from ideas to practical plans, with attention to costing, customer care, savings, and market opportunities.\n\nThis placeholder can later be expanded with details from the training sessions and participant success stories."
+  },
+  {
+    _id: "post-4",
+    title: "Women and Youth Leading Community Change",
+    slug: { current: "women-and-youth-leading-community-change" },
+    excerpt: "Community gatherings create space for learning, leadership, and shared action across West Pokot.",
+    category: "Women Empowerment",
+    publishedAt: "2026-05-16",
+    author: { name: "PRoH Team" },
+    featuredImage: { asset: { url: rayImages.graduationWide }, alt: "Community graduation gathering" },
+    body:
+      "PRoH works with women, youth, children, and partners to build confidence and strengthen community-led solutions.\n\nThis placeholder can later include quotes, photos, and field notes from recent community engagement activities."
+  },
+  {
+    _id: "post-5",
+    title: "Safeguarding Children Through Community Action",
+    slug: { current: "safeguarding-children-through-community-action" },
+    excerpt: "Child protection depends on informed communities, trusted reporting pathways, and responsive local systems.",
+    category: "Child Protection",
+    publishedAt: "2026-05-15",
+    author: { name: "PRoH Team" },
+    featuredImage: { asset: { url: rayImages.communityGathering }, alt: "Community members gathered for a PRoH activity" },
+    body:
+      "Safeguarding remains central to PRoH's mission. Community awareness, caregiver support, and local coordination help children stay protected and supported.\n\nThis placeholder can later be replaced with a full safeguarding update or policy awareness story."
+  },
+  {
+    _id: "post-6",
+    title: "Conserving the Environment for Resilient Livelihoods",
+    slug: { current: "conserving-the-environment-for-resilient-livelihoods" },
+    excerpt: "Environmental conservation strengthens household resilience and protects the natural systems communities depend on.",
+    category: "Environment",
+    publishedAt: "2026-05-14",
+    author: { name: "PRoH Team" },
+    featuredImage: { asset: { url: rayImages.leadership }, alt: "PRoH community leadership moment" },
+    body:
+      "Environmental action is connected to livelihoods, education, and long-term community resilience.\n\nThis placeholder can later include tree planting updates, climate-smart practices, partner support, and community outcomes."
   }
 ];
 
@@ -179,9 +230,13 @@ export const fallbackEvents: Event[] = [
 ];
 
 export const fallbackResources: Resource[] = [
-  { _id: "resource-1", title: "Annual Report 2025", category: "Annual Reports", fileUrl: "#" },
-  { _id: "resource-2", title: "Child Protection Policy", category: "Policies", fileUrl: "#" },
-  { _id: "resource-3", title: "Safeguarding Guidelines", category: "Guidelines", fileUrl: "#" },
+  { _id: "resource-1", title: "Annual Report 2025", category: "Annual Reports" },
+  { _id: "resource-2", title: "Child Protection Policy", category: "Policies" },
+  { _id: "resource-3", title: "Safeguarding Guidelines", category: "Guidelines" },
+  { _id: "resource-6", title: "Organization Profile", category: "Organization" },
+  { _id: "resource-7", title: "Partnership Brief", category: "Organization" },
+  { _id: "resource-8", title: "Volunteer and Internship Guide", category: "Guidelines" },
+  { _id: "resource-9", title: "Donation Information Sheet", category: "Donor Resources" },
   { _id: "resource-4", title: "Entrepreneurship Trainer Job Description", category: "Careers", fileUrl: "/jobs/entrepreneurship-trainer.pdf" },
   { _id: "resource-5", title: "Solar PV Installation Trainer Job Description", category: "Careers", fileUrl: "/jobs/solar-pv-installation-trainer.pdf" }
 ];
