@@ -189,9 +189,7 @@ export const fallbackPosts: BlogPostDetail[] = [
     author: { name: "PRoH Team" },
     featuredImage: { asset: { url: rayImages.solarTraining }, alt: "Solar PV installation training" },
     body:
-      "Technical training is one way PRoH supports practical livelihoods for young people and community members.
-
-This placeholder story can later include the training objectives, trainer details, participant numbers, and outcomes from the Solar PV installation program."
+      "Technical training is one way PRoH supports practical livelihoods for young people and community members.\n\nThis placeholder story can later include the training objectives, trainer details, participant numbers, and outcomes from the Solar PV installation program."
   },
   {
     _id: "post-6",
@@ -203,9 +201,7 @@ This placeholder story can later include the training objectives, trainer detail
     author: { name: "PRoH Team" },
     featuredImage: { asset: { url: rayImages.graduationWalk }, alt: "Graduates walking at a community event" },
     body:
-      "Entrepreneurship support helps participants move from ideas to practical plans, with attention to costing, customer care, savings, and market opportunities.
-
-This placeholder can later be expanded with details from the training sessions and participant success stories."
+      "Entrepreneurship support helps participants move from ideas to practical plans, with attention to costing, customer care, savings, and market opportunities.\n\nThis placeholder can later be expanded with details from the training sessions and participant success stories."
   },
   {
     _id: "post-7",
