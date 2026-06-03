@@ -148,6 +148,39 @@ export const fallbackPosts: BlogPostDetail[] = [
   },
   {
     _id: "post-2",
+    title: "Breaking Cultural Barriers to Equip Marginalised Kenyan Girls with Entrepreneurial Skills",
+    slug: { current: "breaking-cultural-barriers-to-equip-marginalised-kenyan-girls-with-entrepreneurial-skills" },
+    excerpt: "Young women from Kenya's arid and semi-arid lands graduate from an entrepreneur skills programme, overcoming gender norms and early marriage pressures.",
+    category: "News",
+    publishedAt: "2026-05-18",
+    author: { name: "InterPress Service (IPS)" },
+    body:
+      "A group of young women graduated from an entrepreneur skills programme taking place in Kenya's arid and semi-arid regions. Credit: Isaiah Esipisu/IPS\n\nMORPUS, Kenya, May 18 2026 (IPS) - For generations, communities in Kenya’s arid and semi-arid lands have viewed girls through the lens of marriage, with some being married at 11 in exchange for livestock or soon after secondary school, denying them opportunity for further education and skills training.\n\nRead more: https://www.ipsnews.net/2026/05/breaking-cultural-barriers-to-equip-marginalised-kenyan-girls-with-entrepreneurial-skills/#google_vignette"
+  },
+  {
+    _id: "post-3",
+    title: "Ecofrontline Africa Spotlight on Kenyan Women Entrepreneurs",
+    slug: { current: "ecofrontline-africa-spotlight-on-kenyan-women-entrepreneurs" },
+    excerpt: "A video feature from Ecofrontline Africa highlights rural Kenyan women using entrepreneurship to rebuild livelihoods in challenging conditions.",
+    category: "News",
+    publishedAt: "2026-05-18",
+    author: { name: "Ecofrontline Africa" },
+    body:
+      "Ecofrontline Africa shares a compelling video story about young women in Kenya gaining business skills and economic independence.\n\nWatch here: https://youtu.be/I2kn2TllIJ0?si=ivLMECtN25k_Okya"
+  },
+  {
+    _id: "post-4",
+    title: "HER Lab Returns: Empowering Female Entrepreneurship in Kenya",
+    slug: { current: "her-lab-returns-empowering-female-entrepreneurship-in-kenya" },
+    excerpt: "Drexel University and Global Give Back Circle support rural young women in Kenya through the HER Lab program, tackling financial exclusion and gender barriers.",
+    category: "News",
+    publishedAt: "2026-05-18",
+    author: { name: "Drexel University" },
+    body:
+      "Following a successful 2023 pilot, the Charles D. Close School of Entrepreneurship once again collaborated with Global Give Back Circle to economically empower rural young women in Kenya through the HER Lab program.\n\nEntrepreneurship can be a powerful tool to uplift communities, yet the regions where it is most impactful often face the highest barriers to entry. Entrepreneurs in these regions must overcome a triple disadvantage of systemic financial exclusion, restrictive gender norms such as early marriage and domestic labour, and a lack of access to formal professional networks required to turn a skill into a sustainable enterprise.\n\nRead more: https://www.lebow.drexel.edu/news/her-lab-returns-empowering-female-entrepreneurship-kenya"
+  },
+  {
+    _id: "post-5",
     title: "Solar PV Training Opens Clean Energy Pathways",
     slug: { current: "solar-pv-training-opens-clean-energy-pathways" },
     excerpt: "Hands-on solar installation training helps learners connect technical skills with local energy needs.",
@@ -156,10 +189,12 @@ export const fallbackPosts: BlogPostDetail[] = [
     author: { name: "PRoH Team" },
     featuredImage: { asset: { url: rayImages.solarTraining }, alt: "Solar PV installation training" },
     body:
-      "Technical training is one way PRoH supports practical livelihoods for young people and community members.\n\nThis placeholder story can later include the training objectives, trainer details, participant numbers, and outcomes from the Solar PV installation program."
+      "Technical training is one way PRoH supports practical livelihoods for young people and community members.
+
+This placeholder story can later include the training objectives, trainer details, participant numbers, and outcomes from the Solar PV installation program."
   },
   {
-    _id: "post-3",
+    _id: "post-6",
     title: "Entrepreneurship Training for Resilient Livelihoods",
     slug: { current: "entrepreneurship-training-for-resilient-livelihoods" },
     excerpt: "Business skills, mentorship, and practical planning help youth and women strengthen income opportunities.",
@@ -168,10 +203,12 @@ export const fallbackPosts: BlogPostDetail[] = [
     author: { name: "PRoH Team" },
     featuredImage: { asset: { url: rayImages.graduationWalk }, alt: "Graduates walking at a community event" },
     body:
-      "Entrepreneurship support helps participants move from ideas to practical plans, with attention to costing, customer care, savings, and market opportunities.\n\nThis placeholder can later be expanded with details from the training sessions and participant success stories."
+      "Entrepreneurship support helps participants move from ideas to practical plans, with attention to costing, customer care, savings, and market opportunities.
+
+This placeholder can later be expanded with details from the training sessions and participant success stories."
   },
   {
-    _id: "post-4",
+    _id: "post-7",
     title: "Women and Youth Leading Community Change",
     slug: { current: "women-and-youth-leading-community-change" },
     excerpt: "Community gatherings create space for learning, leadership, and shared action across West Pokot.",
@@ -183,7 +220,7 @@ export const fallbackPosts: BlogPostDetail[] = [
       "PRoH works with women, youth, children, and partners to build confidence and strengthen community-led solutions.\n\nThis placeholder can later include quotes, photos, and field notes from recent community engagement activities."
   },
   {
-    _id: "post-5",
+    _id: "post-8",
     title: "Safeguarding Children Through Community Action",
     slug: { current: "safeguarding-children-through-community-action" },
     excerpt: "Child protection depends on informed communities, trusted reporting pathways, and responsive local systems.",
@@ -195,7 +232,7 @@ export const fallbackPosts: BlogPostDetail[] = [
       "Safeguarding remains central to PRoH's mission. Community awareness, caregiver support, and local coordination help children stay protected and supported.\n\nThis placeholder can later be replaced with a full safeguarding update or policy awareness story."
   },
   {
-    _id: "post-6",
+    _id: "post-9",
     title: "Conserving the Environment for Resilient Livelihoods",
     slug: { current: "conserving-the-environment-for-resilient-livelihoods" },
     excerpt: "Environmental conservation strengthens household resilience and protects the natural systems communities depend on.",
