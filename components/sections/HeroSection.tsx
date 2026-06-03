@@ -7,20 +7,27 @@ interface HeroSectionProps {
   title: string;
   subtitle: string;
   imageSrc?: string;
+  imageSrcs?: string[];
 }
 
-export function HeroSection({ eyebrow, title, subtitle, imageSrc = siteImages.hero }: HeroSectionProps) {
+export function HeroSection({ eyebrow, title, subtitle, imageSrc = siteImages.hero, imageSrcs }: HeroSectionProps) {
+  const slideshowImages = imageSrcs && imageSrcs.length > 0 ? imageSrcs : [imageSrc];
+
   return (
     <section className="relative overflow-hidden py-24 text-white">
       <div className="absolute inset-0" aria-hidden>
-        <Image
-          src={imageSrc}
-          alt=""
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        {slideshowImages.map((src, index) => (
+          <Image
+            key={src}
+            src={src}
+            alt=""
+            fill
+            priority={index === 0}
+            className={slideshowImages.length > 1 ? "hero-slide object-cover" : "object-cover"}
+            style={slideshowImages.length > 1 ? { animationDelay: `${index * 5}s` } : undefined}
+            sizes="100vw"
+          />
+        ))}
         <div className="absolute inset-0 bg-brandBlue/75" />
         <div className="absolute inset-0 bg-gradient-to-r from-brandBlue/90 via-brandBlue/70 to-brandGreen/60" />
       </div>

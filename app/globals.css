@@ -27,3 +27,20 @@ a {
 .section-space {
   @apply py-16 sm:py-20;
 }
+
+.hero-slide {
+  animation: hero-slideshow 25s infinite;
+  opacity: 0;
+}
+
+@keyframes hero-slideshow {
+  0%,
+  18% {
+    opacity: 1;
+  }
+
+  24%,
+  100% {
+    opacity: 0;
+  }
+}
