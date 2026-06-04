@@ -24,3 +24,14 @@
  ✓ Compiled in 40.2s (5686 modules)
  ✓ Compiled in 2.7s (5686 modules)
  ✓ Compiled in 5s (5686 modules)
+ GET / 200 in 1488ms
+ GET / 200 in 163ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 2.3s (3450 modules)
+ GET /favicon-32x32.png 404 in 2987ms
+ GET /favicon-16x16.png 404 in 106ms
+ GET /favicon-16x16.png 404 in 79ms
+ GET /favicon-16x16.png 404 in 98ms
+ GET /favicon-16x16.png 404 in 71ms
+ ✓ Compiled in 2.6s (5686 modules)
+[?25h

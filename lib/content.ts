@@ -296,7 +296,7 @@ export const fallbackSiteSettings: SiteSettings = {
   organizationName: "Perur Rays of Hope",
   email: "info@perurraysofhope.org",
   phone: "+254 724 578225",
-  address: "P.O. Box 0-30600, Kapenguria, West Pokot County, Kenya",
+  address: "P.O. Box 618-30600, Kapenguria, West Pokot County, Kenya",
   socialLinks: {
     facebook: "https://www.facebook.com/share/18huRdaCSr/",
     instagram: "https://www.instagram.com/perurrayofhope?igsh=MWRwc200ZXdrYnB1cQ==",

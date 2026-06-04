@@ -16,7 +16,7 @@ export default function ContactPage() {
               <h2 className="text-lg font-semibold text-brandBlue">Contact Details</h2>
               <p className="mt-2 text-sm text-slate-600">Email: info@perurraysofhope.org</p>
 <p className="text-sm text-slate-600">Phone: +254 724 578225</p>
-              <p className="text-sm text-slate-600">Address: P.O. Box 0-30600</p>
+              <p className="text-sm text-slate-600">Address: P.O. Box 618-30600</p>
               <p className="text-sm text-slate-600">Kapenguria, West Pokot County, Kenya</p>
             </div>
             <div>
