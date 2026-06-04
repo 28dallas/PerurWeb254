@@ -13,6 +13,8 @@ export default async function BlogPage() {
   const posts = await getBlogPosts();
   const categories = Array.from(new Set(posts.map((post) => post.category || "News")));
   const featuredPost = posts[0];
+  const featuredHref = featuredPost?.sourceUrl || (featuredPost ? `/blog/${featuredPost.slug.current}` : "");
+  const isExternalFeatured = /^(https?:)?\/\//.test(featuredHref);
 
   return (
     <>
@@ -28,7 +30,12 @@ export default async function BlogPage() {
             </div>
             <div className="mt-6 flex items-end justify-between gap-4 border-t border-slate-200 pt-5 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
               <p className="text-sm text-slate-500">By {featuredPost.author?.name || "PRoH Team"}</p>
-              <a href={`/blog/${featuredPost.slug.current}`} className="text-sm font-semibold text-brandBlue hover:text-brandGreen">
+              <a
+                href={featuredHref}
+                target={isExternalFeatured ? "_blank" : undefined}
+                rel={isExternalFeatured ? "noopener noreferrer" : undefined}
+                className="text-sm font-semibold text-brandBlue hover:text-brandGreen"
+              >
                 Read story
               </a>
             </div>

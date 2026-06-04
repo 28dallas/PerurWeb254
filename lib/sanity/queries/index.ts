@@ -69,6 +69,7 @@ export const blogPostsQuery = groq`*[_type == "blogPost"] | order(publishedAt de
   excerpt,
   publishedAt,
   category,
+  sourceUrl,
   featuredImage,
   "author": author->{name}
 }`;
@@ -83,6 +84,7 @@ export const blogPostBySlugQuery = groq`*[_type == "blogPost" && slug.current ==
   seoTitle,
   seoDescription,
   category,
+  sourceUrl,
   featuredImage,
   "author": author->{name}
 }`;
