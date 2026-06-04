@@ -9,6 +9,7 @@ const blogPostSchema = {
     { name: "body", type: "array", title: "Body", of: [{ type: "block" }] },
     { name: "author", type: "reference", to: [{ type: "teamMember" }], title: "Author" },
     { name: "category", type: "string", title: "Category" },
+    { name: "sourceUrl", type: "url", title: "Source URL" },
     { name: "featuredImage", type: "image", title: "Featured Image", options: { hotspot: true } },
     { name: "publishedAt", type: "datetime", title: "Published At" },
     { name: "seoTitle", type: "string", title: "SEO Title" },

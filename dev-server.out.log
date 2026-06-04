@@ -1,0 +1,37 @@
+
+> perur-rays-of-hope@1.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 2.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 20s (5681 modules)
+ GET / 200 in 20731ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 8.3s (5684 modules)
+ GET /favicon-16x16.png 404 in 9253ms
+ GET / 200 in 4908ms
+ GET /favicon-32x32.png 404 in 152ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 1226ms (5674 modules)
+ GET / 200 in 683ms
+ GET /favicon-16x16.png 404 in 78ms
+ GET /favicon-32x32.png 404 in 54ms
+   Reload env: .env.local
+ ✓ Compiled in 40.2s (5686 modules)
+ ✓ Compiled in 2.7s (5686 modules)
+ ✓ Compiled in 5s (5686 modules)
+ GET / 200 in 1488ms
+ GET / 200 in 163ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 2.3s (3450 modules)
+ GET /favicon-32x32.png 404 in 2987ms
+ GET /favicon-16x16.png 404 in 106ms
+ GET /favicon-16x16.png 404 in 79ms
+ GET /favicon-16x16.png 404 in 98ms
+ GET /favicon-16x16.png 404 in 71ms
+ ✓ Compiled in 2.6s (5686 modules)
+[?25h
