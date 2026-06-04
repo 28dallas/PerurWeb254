@@ -7,10 +7,11 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET?.trim();
 const apiVersion = process.env.SANITY_API_VERSION || "2025-01-01";
 const validProjectId = projectId && /^[a-z0-9-]+$/.test(projectId) ? projectId : null;
 const validDataset = dataset && /^[a-z0-9_]+$/.test(dataset) ? dataset : null;
+const disableSanity = true;
 
-export const hasSanityConfig = Boolean(validProjectId && validDataset);
+export const hasSanityConfig = !disableSanity && Boolean(validProjectId && validDataset);
 
-if ((projectId && !validProjectId) || (dataset && !validDataset)) {
+if (!disableSanity && ((projectId && !validProjectId) || (dataset && !validDataset))) {
   console.warn("Invalid Sanity env configuration detected. Falling back to local fallback content.");
 }
 
