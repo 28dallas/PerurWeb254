@@ -57,8 +57,14 @@ export default function CareersPage() {
 
         <div className="grid gap-6 lg:grid-cols-2">
           {careerRoles.map((role) => (
-            <article key={role.title} className="rounded-xl2 border border-slate-200 bg-white p-6 shadow-soft">
-              {role.deadline ? (
+            <article key={role.title} className={`rounded-xl2 border bg-white p-6 shadow-soft ${
+              role.expired ? "border-slate-200 opacity-70" : "border-slate-200"
+            }`}>
+              {role.expired ? (
+                <div className="mb-5 rounded-xl2 border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+                  ⛔ This position has closed — deadline passed
+                </div>
+              ) : role.deadline ? (
                 <div className="mb-5 rounded-xl2 border border-brandOrange/30 bg-brandOrange/10 px-4 py-3 text-sm font-semibold text-slate-800">
                   Application deadline: {role.deadline}
                 </div>
@@ -102,7 +108,7 @@ export default function CareersPage() {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button href={role.applyHref}>Apply now</Button>
+                {!role.expired && <Button href={role.applyHref}>Apply now</Button>}
                 {role.pdf ? (
                   <Button href={role.pdf} variant="ghost">
                     Download job PDF

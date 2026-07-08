@@ -34,7 +34,7 @@ export function Navbar() {
             className="h-auto w-36 shrink-0 object-contain sm:w-44"
             priority
           />
-          <span className="text-base font-bold text-brandBlue sm:text-xl">Perur Rays of Hope</span>
+
         </Link>
 
         <div className="hidden items-center gap-6 lg:flex">
