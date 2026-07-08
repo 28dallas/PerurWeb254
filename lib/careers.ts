@@ -7,6 +7,7 @@ export type CareerRole = {
   responsibilities: string[];
   requirements: string[];
   deadline?: string;
+  expired?: boolean;
   pdf?: string;
   applyHref: string;
 };
@@ -24,6 +25,30 @@ function applicationHref(title: string) {
 
 export const careerRoles: CareerRole[] = [
   {
+    title: "MERL Program Assistant",
+    location: "Morpus, West Pokot County, Kenya",
+    type: "Full-time",
+    department: "MERL",
+    summary: "Perur Rays of Hope (PRoH), in partnership with Global Give Back Circle (GGBC), is seeking a dynamic, passionate, and experienced MERL Program Assistant to support the MERL department at HER Lab Program in West Pokot County. This role involves contributing to MERL activities and providing close supervision and guidance to a team of two MERL Analysts. The MERL Assistant will play a pivotal role in ensuring the accuracy and effectiveness of data collection, data management, interviewing, and participant engagement processes.",
+    responsibilities: [
+      "Support data collection, data management, and participant engagement processes.",
+      "Supervise and guide a team of two MERL Analysts.",
+      "Contribute to program monitoring, tracking, internal and external reporting.",
+      "Support continuous learning and evidence-based program improvement.",
+      "Facilitate stakeholder engagement activities."
+    ],
+    requirements: [
+      "Experience in Monitoring, Evaluation, Research, and Learning (MERL).",
+      "Strong data collection and management skills.",
+      "Ability to supervise and mentor junior team members.",
+      "Excellent communication and reporting skills.",
+      "Commitment to community-centered program delivery."
+    ],
+    deadline: "Before 20th July 2026",
+    pdf: "/jobs/merl-program-assistant.pdf",
+    applyHref: applicationHref("MERL Program Assistant")
+  },
+  {
     title: "Entrepreneurship Trainer",
     location: "West Pokot, Kenya",
     type: "Trainer / Consultancy",
@@ -40,6 +65,7 @@ export const careerRoles: CareerRole[] = [
       "Strong communication, documentation, and safeguarding awareness."
     ],
     deadline: "20th May 2026",
+    expired: true,
     pdf: "/jobs/entrepreneurship-trainer.pdf",
     applyHref: applicationHref("Entrepreneurship Trainer")
   },
@@ -60,6 +86,7 @@ export const careerRoles: CareerRole[] = [
       "Strong safety practice, communication skills, and commitment to quality training."
     ],
     deadline: "26th May 2026",
+    expired: true,
     pdf: "/jobs/solar-pv-installation-trainer.pdf",
     applyHref: applicationHref("Solar PV Installation Trainer")
   }
