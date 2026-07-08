@@ -43,7 +43,6 @@ export async function Footer() {
               height={80}
               className="h-auto w-48 object-contain sm:w-60"
             />
-            <h3 className="text-2xl font-bold">Perur Rays of Hope</h3>
           </div>
           <p className="mt-3 text-sm text-slate-200">
             Safeguarding children, empowering youths and women, and conserving the environment for resilient livelihoods.

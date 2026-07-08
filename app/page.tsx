@@ -12,7 +12,7 @@ import { getRayImages } from "@/lib/gallery-images";
 import Image from "next/image";
 
 const partners = [
-  { name: "Global Give Back Circle (GGBC)", logo: "/images/logo/gb.png" },
+  { name: "Global Give Back Circle", logo: "/images/logo/gb.png" },
   { name: "Mastercard Foundation", logo: "/images/logo/images.jpeg" },
   { name: "Circle Group", logo: "/images/logo/Circle Group.jpg" },
   { name: "International Tree Foundation (ITF)", logo: "/images/logo/itf.jpg" },
