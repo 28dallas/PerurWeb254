@@ -26,30 +26,29 @@ function applicationHref(title: string) {
 export const careerRoles: CareerRole[] = [
   {
     title: "MERL Program Assistant",
-    location: "West Pokot, Kenya",
+    location: "Morpus, West Pokot County, Kenya",
     type: "Full-time",
-    department: "Monitoring, Evaluation, Research & Learning",
-    summary: "We are seeking a dedicated and motivated individual to join our team as a Monitoring, Evaluation, Research, and Learning (MERL) Program Assistant. This role involves contributing to MERL activities while providing close supervision and guidance to a team of two MERL Analysts, ensuring accuracy and effectiveness in data collection, data management, interviewing, and participant engagement processes.",
+    department: "MERL",
+    summary: "Perur Rays of Hope (PRoH), an implementation partner of the Global Give Back Circle, is seeking a dynamic, passionate, and experienced MERL Program Assistant to support the MERL department at HER Lab Program in West Pokot County. This role involves contributing to MERL activities and providing close supervision and guidance to a team of two MERL Analysts, ensuring accuracy and effectiveness of data collection, data management, interviewing, and participant engagement processes. The position is based on-site in Morpus, West Pokot.",
     responsibilities: [
-      "Supervise and provide day-to-day guidance to two MERL Analysts in data collection and field activities.",
-      "Support program monitoring, tracking, and internal and external reporting processes.",
-      "Lead and coordinate data collection, data entry, cleaning, and management using approved tools.",
-      "Conduct and oversee participant interviews, focus group discussions, and community engagement.",
-      "Contribute to continuous learning, evidence-based program improvement, and stakeholder engagement.",
-      "Prepare timely MERL reports, summaries, and documentation for program and donor use."
+      "Collaborate with senior MERL staff to design and implement monitoring and evaluation plans.",
+      "Assist in data collection, data entry, and analysis, ensuring accuracy and timeliness.",
+      "Provide close supervision, training, and performance evaluations of two MERL Analysts.",
+      "Oversee data management activities, ensuring data accuracy, consistency, and security.",
+      "Foster participant buy-in and ensure perspectives are accurately represented in reporting.",
+      "Contribute to preparation of reports, summaries, and presentations for internal and external stakeholders."
     ],
     requirements: [
-      "Diploma or degree in Monitoring & Evaluation, Statistics, Social Sciences, or a related field.",
-      "At least 1–2 years of experience in MERL, data collection, or program support roles.",
-      "Proficiency in data collection tools (ODK, KoboToolbox, or similar) and MS Excel or equivalent.",
-      "Strong analytical, communication, and report-writing skills.",
-      "Experience working in community-based or NGO settings is an added advantage.",
-      "Commitment to safeguarding, data privacy, and ethical research practices."
+      "Bachelor's degree in social sciences, Statistics, Economics, M&E, development studies, or related field.",
+      "Certificate in M&E, Data Science, Project Planning, or research methods is an added advantage.",
+      "2+ years of proven M&E experience in the NGO or humanitarian sector.",
+      "Experience with data collection tools (Qualtrics, ODK, Kobo Collect, SurveyCTO) and analysis software (SPSS, Stata, R, Advanced Excel).",
+      "Prior experience in baseline, midline, and endline surveys and routine assessments.",
+      "Relocation flexibility — position is based on-site in Morpus, West Pokot County."
     ],
-    deadline: "25th July 2026",
-    expired: false,
+    deadline: "Before 20th July 2026",
     pdf: "/jobs/merl-program-assistant.pdf",
-    applyHref: applicationHref("MERL Program Assistant")
+    applyHref: "mailto:admin@perurraysofhope.org?cc=Vicky@perurraysofhope.org&subject=MERL%20Program%20Assistant&body=Dear%20Perur%20Rays%20of%20Hope%20Team%2C%0A%0APlease%20find%20attached%3A%0A-%20Updated%20CV%0A-%20Copies%20of%20academic%20and%20professional%20certificates%0A-%20Evidence%20of%20relevant%20experience%0A-%20At%20least%20two%20referees%0A%0AKind%20regards%2C"
   },
   {
     title: "Entrepreneurship Trainer",
