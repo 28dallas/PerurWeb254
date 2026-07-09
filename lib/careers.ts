@@ -25,6 +25,33 @@ function applicationHref(title: string) {
 
 export const careerRoles: CareerRole[] = [
   {
+    title: "MERL Program Assistant",
+    location: "West Pokot, Kenya",
+    type: "Full-time",
+    department: "Monitoring, Evaluation, Research & Learning",
+    summary: "We are seeking a dedicated and motivated individual to join our team as a Monitoring, Evaluation, Research, and Learning (MERL) Program Assistant. This role involves contributing to MERL activities while providing close supervision and guidance to a team of two MERL Analysts, ensuring accuracy and effectiveness in data collection, data management, interviewing, and participant engagement processes.",
+    responsibilities: [
+      "Supervise and provide day-to-day guidance to two MERL Analysts in data collection and field activities.",
+      "Support program monitoring, tracking, and internal and external reporting processes.",
+      "Lead and coordinate data collection, data entry, cleaning, and management using approved tools.",
+      "Conduct and oversee participant interviews, focus group discussions, and community engagement.",
+      "Contribute to continuous learning, evidence-based program improvement, and stakeholder engagement.",
+      "Prepare timely MERL reports, summaries, and documentation for program and donor use."
+    ],
+    requirements: [
+      "Diploma or degree in Monitoring & Evaluation, Statistics, Social Sciences, or a related field.",
+      "At least 1–2 years of experience in MERL, data collection, or program support roles.",
+      "Proficiency in data collection tools (ODK, KoboToolbox, or similar) and MS Excel or equivalent.",
+      "Strong analytical, communication, and report-writing skills.",
+      "Experience working in community-based or NGO settings is an added advantage.",
+      "Commitment to safeguarding, data privacy, and ethical research practices."
+    ],
+    deadline: "25th July 2026",
+    expired: false,
+    pdf: "/jobs/merl-program-assistant.pdf",
+    applyHref: applicationHref("MERL Program Assistant")
+  },
+  {
     title: "Entrepreneurship Trainer",
     location: "West Pokot, Kenya",
     type: "Trainer / Consultancy",
