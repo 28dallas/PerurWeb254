@@ -1,6 +1,6 @@
 export const SITE_NAME = "Perur Rays of Hope";
 export const SITE_SHORT = "PRoH";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.perurraysofhope.org";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.perurraysofhopeke.org";
 
 // Social Media Links
 export const SOCIAL_LINKS = {

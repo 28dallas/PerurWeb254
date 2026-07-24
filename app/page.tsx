@@ -8,7 +8,7 @@ import { urlFor } from "@/lib/sanity/client";
 
 const image = {
   hero: "/images/rays/photo_2026-05-19_13-57-34.jpg",
-  community: "/images/new/photo_40_2026-03-03_11-10-37.jpg",
+  community: "/images/rays/photo_2026-05-19_13-57-36.jpg",
   graduates: "/images/rays/photo_2026-05-19_13-57-30.jpg",
   skills: "/images/rays/photo_2026-05-19_13-57-27.jpg",
   women: "/images/rays/photo_2026-05-19_13-57-42 (2).jpg",

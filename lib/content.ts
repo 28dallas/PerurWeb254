@@ -152,6 +152,7 @@ export const fallbackPosts: BlogPostDetail[] = [
     slug: { current: "breaking-cultural-barriers-to-equip-marginalised-kenyan-girls-with-entrepreneurial-skills" },
     excerpt: "Young women from Kenya's arid and semi-arid lands graduate from an entrepreneur skills programme, overcoming gender norms and early marriage pressures.",
     category: "News",
+    featuredImage: { asset: { url: rayImages.leadership }, alt: "Young women learning entrepreneurial skills" },
     sourceUrl: "https://www.ipsnews.net/2026/05/breaking-cultural-barriers-to-equip-marginalised-kenyan-girls-with-entrepreneurial-skills/#google_vignette",
     publishedAt: "2026-05-18",
     author: { name: "InterPress Service (IPS)" },
@@ -164,6 +165,7 @@ export const fallbackPosts: BlogPostDetail[] = [
     slug: { current: "ecofrontline-africa-spotlight-on-kenyan-women-entrepreneurs" },
     excerpt: "A video feature from Ecofrontline Africa highlights rural Kenyan women using entrepreneurship to rebuild livelihoods in challenging conditions.",
     category: "News",
+    featuredImage: { asset: { url: "/images/new/photo_50_2026-03-03_11-10-37.jpg" }, alt: "Women celebrating a community partnership" },
     sourceUrl: "https://youtu.be/I2kn2TllIJ0?si=ivLMECtN25k_Okya",
     publishedAt: "2026-05-18",
     author: { name: "Ecofrontline Africa" },
@@ -238,7 +240,7 @@ export const fallbackPosts: BlogPostDetail[] = [
     category: "Environment",
     publishedAt: "2026-05-14",
     author: { name: "PRoH Team" },
-    featuredImage: { asset: { url: rayImages.leadership }, alt: "PRoH community leadership moment" },
+    featuredImage: { asset: { url: "/images/new/photo_85_2026-03-03_11-10-37.jpg" }, alt: "Environmental conservation activity" },
     body:
       "Environmental action is connected to livelihoods, education, and long-term community resilience.\n\nThis placeholder can later include tree planting updates, climate-smart practices, partner support, and community outcomes."
   }

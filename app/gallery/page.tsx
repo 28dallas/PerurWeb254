@@ -16,14 +16,14 @@ export default function GalleryPage() {
   return (
     <>
       <PageHero
-        title="Gallery"
-        description="Moments from our programs, trainings, community engagement, and partner work across West Pokot County."
+        eyebrow="In pictures"
+        title="The work. The joy. The people." 
+        description="Moments from programmes, training, community action and everyday resilience across West Pokot County."
+        imageSrc="/images/new/photo_60_2026-03-03_11-10-37.jpg"
       />
 
-      <Section
-        title="Perur Rays in action"
-        subtitle="Perur Rays of Hope is a community-based organization dedicated to empowering women, protecting children, promoting education, and conserving the environment in West Pokot County."
-      >
+      <section className="bg-[#f4f1e9] py-16 sm:py-20"><div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[.7fr_1.3fr] lg:px-8"><p className="text-sm font-bold uppercase tracking-[.2em] text-brandGreen">Perur Rays in action</p><p className="font-serif text-3xl leading-tight text-brandBlue sm:text-4xl">These photographs carry the energy, learning and leadership of a community moving forward together.</p></div></section>
+      <Section className="bg-white" title="Moments that matter">
         {rayImages.length === 0 ? (
           <div className="mb-6 rounded-xl2 border border-brandOrange/30 bg-brandOrange/10 p-5 text-sm text-slate-700">
             The public/images/rays folder is ready, but it does not contain image files in this workspace yet.

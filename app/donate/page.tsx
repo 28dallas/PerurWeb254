@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
+import { Heart, LockKeyhole, ShieldCheck, Sparkles } from "lucide-react";
 
 const impact = [
   { amount: "$20", effect: "Provides learning materials for one child for a month" },
@@ -67,19 +68,27 @@ export default function DonatePage() {
   return (
     <>
       <PageHero
-        title="Donate"
-        description="Support secure, accountable, and transparent impact across child protection, youth and women empowerment, and climate resilience."
+        eyebrow="Give with purpose"
+        title="Invest in possibility."
+        description="Your support helps communities protect children, create livelihoods and care for the environment they depend on."
+        imageSrc="/images/rays/photo_2026-05-19_13-57-42 (2).jpg"
       />
 
-      <Section title="Give with Confidence">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <article className="rounded-xl2 bg-white p-7 shadow-soft">
-            <h2 className="text-xl font-semibold text-brandBlue">Donate Now</h2>
-            <p className="mt-3 text-sm text-slate-600">Choose your preferred secure donation channel.</p>
+      <section className="bg-[#f4f1e9] py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:grid-cols-3 sm:px-6 lg:px-8">
+          {[["Direct impact", "Your gift supports practical solutions shaped with communities.", Heart], ["Secure giving", "Payments are handled through secure, trusted providers.", LockKeyhole], ["Clear accountability", "We work with transparent reporting and safeguarding standards.", ShieldCheck]].map(([title, text, Icon]) => { const ItemIcon = Icon as typeof Heart; return <div key={title as string} className="flex gap-4"><ItemIcon className="mt-1 h-5 w-5 shrink-0 text-brandGreen" /><div><p className="font-bold text-brandBlue">{title as string}</p><p className="mt-1 text-sm leading-relaxed text-slate-600">{text as string}</p></div></div>; })}
+        </div>
+      </section>
+
+      <Section className="bg-white" title="Choose the future you want to support" subtitle="Every contribution helps communities build safety, skills and sustainable livelihoods.">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_.85fr]">
+          <article className="rounded-[2rem] bg-brandBlue p-7 text-white shadow-soft sm:p-9">
+            <div className="flex items-center gap-3"><Sparkles className="h-5 w-5 text-amber-300" /><h2 className="font-serif text-3xl">Make a donation</h2></div>
+            <p className="mt-3 text-sm text-white/75">Choose your preferred secure donation channel.</p>
 
             <form onSubmit={handleDonate} className="mt-6 flex flex-col gap-5">
               <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700">Amount (USD)</label>
+                <label className="mb-2 block text-sm font-medium text-white/90">Amount (USD)</label>
                 <div className="flex flex-wrap gap-2">
                   {[20, 50, 100, 250].map((preset) => (
                     <button
@@ -87,8 +96,8 @@ export default function DonatePage() {
                       type="button"
                       onClick={() => setAmount(preset)}
                       className={`rounded-lg border px-4 py-2 text-sm font-semibold transition-colors ${amount === preset
-                          ? "border-brandBlue bg-brandBlue text-white"
-                          : "border-slate-300 bg-white text-slate-700 hover:border-brandBlue hover:text-brandBlue"
+                          ? "border-amber-300 bg-amber-300 text-slate-900"
+                          : "border-white/30 bg-white/10 text-white hover:border-amber-300 hover:text-amber-300"
                         }`}
                     >
                       ${preset}
@@ -99,16 +108,16 @@ export default function DonatePage() {
                     min="1"
                     value={amount}
                     onChange={(e) => setAmount(Number(e.target.value))}
-                    className="w-24 rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brandBlue focus:outline-none focus:ring-1 focus:ring-brandBlue"
+                    className="w-24 rounded-lg border border-white/30 bg-white px-3 py-2 text-sm text-slate-900 focus:border-amber-300 focus:outline-none focus:ring-1 focus:ring-amber-300"
                     placeholder="Custom"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700">Payment Method</label>
+                <label className="mb-2 block text-sm font-medium text-white/90">Payment Method</label>
                 <div className="flex gap-4">
-                  <label className="flex items-center gap-2 text-sm cursor-pointer">
+                  <label className="flex cursor-pointer items-center gap-2 text-sm text-white">
                     <input
                       type="radio"
                       name="method"
@@ -119,7 +128,7 @@ export default function DonatePage() {
                     />
                     Credit / Debit Card
                   </label>
-                  <label className="flex items-center gap-2 text-sm cursor-pointer">
+                  <label className="flex cursor-pointer items-center gap-2 text-sm text-white">
                     <input
                       type="radio"
                       name="method"
@@ -135,7 +144,7 @@ export default function DonatePage() {
 
               {method === "mpesa" && (
                 <div>
-                  <label htmlFor="phone" className="mb-2 block text-sm font-medium text-slate-700">
+                  <label htmlFor="phone" className="mb-2 block text-sm font-medium text-white/90">
                     M-Pesa Phone Number
                   </label>
                   <input
@@ -145,36 +154,37 @@ export default function DonatePage() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="2547XXXXXXXX"
-                    className="w-full rounded-lg border border-slate-300 p-3 text-sm focus:border-brandGreen focus:outline-none focus:ring-1 focus:ring-brandGreen"
+                    className="w-full rounded-lg border border-white/30 bg-white p-3 text-sm text-slate-900 focus:border-amber-300 focus:outline-none focus:ring-1 focus:ring-amber-300"
                   />
                 </div>
               )}
 
-              {error && <p className="text-sm text-red-600">{error}</p>}
-              {message && <p className="text-sm text-brandGreen font-medium">{message}</p>}
+              {error && <p className="text-sm text-red-200">{error}</p>}
+              {message && <p className="text-sm font-medium text-amber-300">{message}</p>}
 
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full rounded-xl2 bg-brandBlue py-3 text-sm font-bold text-white transition-colors hover:bg-brandGreen ${loading ? "opacity-70 cursor-not-allowed" : ""
+                className={`w-full rounded-full bg-brandOrange py-3.5 text-sm font-bold text-slate-900 transition-colors hover:bg-amber-300 ${loading ? "opacity-70 cursor-not-allowed" : ""
                   }`}
               >
                 {loading ? "Processing..." : `Donate $${amount}`}
               </button>
             </form>
 
-            <p className="mt-5 text-xs text-slate-500">
+            <p className="mt-5 text-xs leading-relaxed text-white/60">
               Data Protection Notice: Donor data is processed securely via Stripe or Safaricom M-Pesa integrations and never sold to third parties.
             </p>
           </article>
 
-          <article className="rounded-xl2 bg-softGray p-7">
-            <h3 className="text-xl font-semibold text-brandBlue">Your impact</h3>
+          <article className="rounded-[2rem] bg-[#f4f1e9] p-7 sm:p-9">
+            <p className="text-xs font-bold uppercase tracking-[.18em] text-brandGreen">What your gift can do</p>
+            <h3 className="mt-3 font-serif text-3xl text-brandBlue">Your impact, close to home.</h3>
             <ul className="mt-4 space-y-3">
               {impact.map((item) => (
-                <li key={item.amount} className="rounded-xl2 bg-white p-4 shadow-soft">
-                  <p className="text-sm font-semibold text-brandGreen">{item.amount}</p>
-                  <p className="text-sm text-slate-600">{item.effect}</p>
+                <li key={item.amount} className="border-b border-brandBlue/10 py-5 last:border-0">
+                  <p className="font-serif text-3xl text-brandGreen">{item.amount}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{item.effect}</p>
                 </li>
               ))}
             </ul>
@@ -182,11 +192,11 @@ export default function DonatePage() {
         </div>
       </Section>
 
-      <Section title="Trust Indicators">
+      <Section className="bg-white" title="Giving you can stand behind" subtitle="We believe trust is earned through clear, responsible practice.">
         <div className="grid gap-5 md:grid-cols-3">
-          <div className="rounded-xl2 border border-slate-200 p-5 text-sm text-slate-600">Transparent financial reporting and annual updates.</div>
-          <div className="rounded-xl2 border border-slate-200 p-5 text-sm text-slate-600">Community-led programming with measurable outcomes.</div>
-          <div className="rounded-xl2 border border-slate-200 p-5 text-sm text-slate-600">Governance and safeguarding standards in every program.</div>
+          <div className="border-t-2 border-brandGreen bg-[#f4f1e9] p-6 text-sm leading-relaxed text-slate-600">Transparent financial reporting and annual updates.</div>
+          <div className="border-t-2 border-brandGreen bg-[#f4f1e9] p-6 text-sm leading-relaxed text-slate-600">Community-led programming with measurable outcomes.</div>
+          <div className="border-t-2 border-brandGreen bg-[#f4f1e9] p-6 text-sm leading-relaxed text-slate-600">Governance and safeguarding standards in every programme.</div>
         </div>
       </Section>
     </>
