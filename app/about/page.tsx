@@ -1,134 +1,28 @@
-import { PageHero } from "@/components/layout/PageHero";
-import { TeamCard } from "@/components/ui/Cards";
-import { Section } from "@/components/ui/Section";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Eye, HeartHandshake, ShieldCheck, Sprout } from "lucide-react";
+import { PageHero } from "@/components/layout/PageHero";
 
-const coreValues = [
-  {
-    title: "Stewardship",
-    description: "Committed to skilling youth 18 years and above for dignified livelihoods."
-  },
-  { title: "Christian Values", description: "Operating on principles of Christian faith, service, and compassion." },
-  { title: "Accountability", description: "Accountable for our actions, decisions, and program outcomes." },
-  { title: "Transparency", description: "Transparent in operations, reporting, and financial dealings." },
-  {
-    title: "Potential of the Child",
-    description: "Committed to unlocking child potential through education and safeguarding."
-  }
+const values = [
+  ["Stewardship", "We equip young people with the skills and confidence to pursue dignified livelihoods.", Sprout],
+  ["Compassion", "We are rooted in Christian values of service, care and respect for every person.", HeartHandshake],
+  ["Accountability", "We take responsibility for our decisions, resources and programme outcomes.", ShieldCheck],
+  ["Transparency", "We communicate openly with communities, partners and supporters.", Eye],
 ];
-
-const mandate = [
-  "Empower women and youth through business skills and employability programs.",
-  "Promote quality education and support retention for vulnerable children.",
-  "Safeguard children through community-led protection systems.",
-  "Strengthen household livelihoods through savings and entrepreneurship support.",
-  "Conserve the environment through climate-smart and restoration initiatives."
-];
-
+const mandate = ["Empower women and youth through business skills and employability programmes.", "Promote quality education and support retention for vulnerable children.", "Safeguard children through community-led protection systems.", "Strengthen household livelihoods through savings and entrepreneurship support.", "Conserve the environment through climate-smart and restoration initiatives."];
+const team = [["Shujaa Caroline Menach, HSC.", "Executive Director"], ["Abiagel Moraa", "Program Manager"], ["Victor Maosi", "Finance Officer"], ["Ruth Akoule", "Program Reporting Officer"], ["Lilian Mnagei", "Community Lead & Focal Liaison Officer"]];
 const partners = [
-  { name: "Global Give Back Circle (GGBC)", logo: "/images/logo/gb.png" },
-  { name: "Mastercard Foundation", logo: "/images/logo/images.jpeg" },
-  { name: "Circle Group", logo: "/images/logo/Circle Group.jpg" },
-  { name: "International Tree Foundation (ITF)", logo: "/images/logo/itf.jpg" },
-  { name: "Mekuno Project", logo: "/images/logo/ms.png" }
+  ["Global Give Back Circle (GGBC)", "/images/logo/gb.png"], ["Mastercard Foundation", "/images/logo/images.jpeg"], ["Circle Group", "/images/logo/Circle Group.jpg"], ["International Tree Foundation (ITF)", "/images/logo/itf.jpg"], ["Mekuno Project", "/images/logo/ms.png"]
 ];
 
-const teamMembers = [
-  { _id: "team-1", name: "Shujaa Caroline Menach, HSC.", role: "Executive Director" },
-  { _id: "team-2", name: "Abiagel Moraa", role: "Program Manger" },
-  { _id: "team-3", name: "Victor Maosi", role: "Finance Officer" },
-  { _id: "team-4", name: "Ruth Akoule", role: "Program Reporting Officer" },
-  { _id: "team-5", name: "Lilian Mnagei", role: "Community Lead & Focal Liason Officer" }
-];
-
-export default async function AboutPage() {
-  return (
-    <>
-      <PageHero
-        title="About Perur Rays of Hope"
-        description="Founded in 2014 and registered in 2021, PRoH is a community-based organization serving West Pokot County, Kenya."
-      />
-
-      <Section title="Our Story">
-        <div className="rounded-xl2 bg-white p-7 shadow-soft">
-          <p className="text-slate-700">
-            Perur Rays of Hope was founded in 2014 and formally registered in 2021 as a women-led, youth-serving and child-focused
-            community organization in West Pokot County. We work with communities and partners to build resilience through social justice,
-            education, livelihood support, and environmental action.
-          </p>
-        </div>
-      </Section>
-
-      <Section title="Vision & Mission">
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-xl2 bg-softGray p-6">
-            <h3 className="text-xl font-semibold text-brandBlue"></h3>
-            <p className="mt-2 text-slate-700">
-              A resilient and empowered community.
-            </p>
-          </div>
-          <div className="rounded-xl2 bg-softGray p-6">
-            <h3 className="text-xl font-semibold text-brandBlue"></h3>
-            <p className="mt-2 text-slate-700">
-              Safe Guarding children, empowering youths and women, and conserving the environment for resilient livelihoods.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      <Section title="Our Mandate">
-        <div className="rounded-xl2 bg-white p-7 shadow-soft">
-          <ul className="space-y-3 text-slate-700">
-            {mandate.map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-brandGreen" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Section>
-
-      <Section title="Core Values">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {coreValues.map((value) => (
-            <article key={value.title} className="rounded-xl2 bg-white p-6 shadow-soft">
-              <h3 className="text-lg font-semibold text-brandBlue">{value.title}</h3>
-              <p className="mt-3 text-sm text-slate-600">{value.description}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      <Section className="bg-softGray" title="Team">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {teamMembers.map((member) => (
-            <TeamCard key={member._id} member={member} />
-          ))}
-        </div>
-      </Section>
-
-      <Section title="Governance & Transparency">
-        <div className="rounded-xl2 border border-brandBlue/15 bg-white p-7">
-          <p className="text-slate-700">
-            PRoH maintains independent oversight, periodic financial reporting, and compliance-oriented governance processes. We share annual impact
-            reports, policy documents, and audited updates to reinforce donor and community trust.
-          </p>
-        </div>
-      </Section>
-
-      <Section title="Partners">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {partners.map((partner) => (
-            <article key={partner.name} className="rounded-xl2 border border-slate-200 bg-white p-5 text-center shadow-soft">
-              <div className="relative mx-auto h-16 w-full max-w-[180px]">
-                <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain" />
-              </div>
-              <p className="mt-3 text-sm font-semibold text-brandBlue">{partner.name}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-    </>
-  );
+export default function AboutPage() {
+  return <>
+    <PageHero eyebrow="Who we are" title="Hope grows when communities lead." description="A women-led, youth-serving and child-focused organisation working alongside communities across West Pokot County." imageSrc="/images/new/photo_45_2026-03-03_11-10-37.jpg" />
+    <section className="bg-[#f4f1e9] py-20 sm:py-28"><div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:px-8"><div><p className="text-sm font-bold uppercase tracking-[.2em] text-brandGreen">Our story</p><div className="relative mt-6 aspect-[4/3] overflow-hidden rounded-[1.5rem]"><Image src="/images/new/photo_40_2026-03-03_11-10-37.jpg" alt="Community members in West Pokot" fill className="object-cover" sizes="(min-width:1024px) 30vw, 100vw" /></div></div><div><h2 className="font-serif text-4xl leading-tight text-brandBlue sm:text-5xl">Rooted in West Pokot. Working toward a future where every person can flourish.</h2><p className="mt-7 max-w-2xl text-lg leading-relaxed text-slate-600">Founded in 2014 and formally registered in 2021, Perur Rays of Hope partners with communities to strengthen social justice, education, livelihoods and environmental resilience.</p></div></div></section>
+    <section className="bg-white py-20 sm:py-28"><div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8"><article className="rounded-[2rem] bg-brandBlue p-8 text-white sm:p-10"><p className="text-xs font-bold uppercase tracking-[.2em] text-amber-300">Our vision</p><p className="mt-7 font-serif text-4xl leading-tight">A resilient and empowered community.</p></article><article className="rounded-[2rem] bg-brandGreen p-8 text-white sm:p-10"><p className="text-xs font-bold uppercase tracking-[.2em] text-amber-300">Our mission</p><p className="mt-7 font-serif text-3xl leading-tight">Safeguarding children, empowering youth and women, and conserving the environment for resilient livelihoods.</p></article></div></section>
+    <section className="bg-brandBlue py-20 text-white sm:py-28"><div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8"><div><p className="text-sm font-bold uppercase tracking-[.2em] text-amber-300">Our commitment</p><h2 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl">Change that holds together.</h2></div><ul className="space-y-5">{mandate.map((item, i) => <li key={item} className="flex gap-5 border-b border-white/20 pb-5"><span className="font-serif text-2xl text-amber-300">0{i + 1}</span><span className="pt-1 text-lg leading-relaxed text-white/85">{item}</span></li>)}</ul></div></section>
+    <section className="bg-white py-20 sm:py-28"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><p className="text-sm font-bold uppercase tracking-[.2em] text-brandGreen">How we show up</p><h2 className="mt-4 font-serif text-4xl text-brandBlue sm:text-5xl">Values in practice.</h2><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{values.map(([title, text, Icon]) => { const ValueIcon = Icon as typeof Sprout; return <article key={title as string} className="border-t-2 border-brandGreen bg-[#f4f1e9] p-6"><ValueIcon className="h-6 w-6 text-brandGreen" /><h3 className="mt-8 font-serif text-2xl text-brandBlue">{title as string}</h3><p className="mt-3 text-sm leading-relaxed text-slate-600">{text as string}</p></article>; })}</div></div></section>
+    <section className="bg-[#f4f1e9] py-20 sm:py-28"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><p className="text-sm font-bold uppercase tracking-[.2em] text-brandGreen">Our people</p><h2 className="mt-4 font-serif text-4xl text-brandBlue sm:text-5xl">The team behind the work.</h2><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{team.map(([name, role], i) => <article key={name} className="bg-white p-7"><p className="font-serif text-3xl text-slate-200">0{i + 1}</p><h3 className="mt-10 text-lg font-bold text-brandBlue">{name}</h3><p className="mt-1 text-sm text-brandGreen">{role}</p></article>)}</div></div></section>
+    <section className="bg-white py-20"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="flex flex-wrap items-end justify-between gap-5"><div><p className="text-sm font-bold uppercase tracking-[.2em] text-brandGreen">Working together</p><h2 className="mt-4 font-serif text-4xl text-brandBlue">Partners in possibility.</h2></div><Link href="/get-involved" className="inline-flex items-center gap-2 text-sm font-bold text-brandBlue hover:text-brandGreen">Partner with us <ArrowRight className="h-4 w-4" /></Link></div><div className="mt-10 grid grid-cols-2 gap-px bg-slate-200 sm:grid-cols-3 lg:grid-cols-5">{partners.map(([name, logo]) => <div key={name} className="relative h-28 bg-white p-5"><Image src={logo} alt={`${name} logo`} fill className="p-5 object-contain" /></div>)}</div></div></section>
+  </>;
 }

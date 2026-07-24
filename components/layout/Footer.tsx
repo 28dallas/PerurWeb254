@@ -1,101 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { siteImages } from "@/lib/site-images";
 import { getSiteSettings } from "@/lib/sanity/fetchers";
 
-const quickLinks = [
-  { href: "/about", label: "About" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/careers", label: "Careers" },
-  { href: "/donate", label: "Donate" },
-  { href: "/policies", label: "Policies" }
-];
+const explore = [{ href: "/about", label: "Our story" }, { href: "/blog", label: "Stories from the field" }, { href: "/gallery", label: "Gallery" }, { href: "/careers", label: "Careers" }];
+const action = [{ href: "/get-involved", label: "Get involved" }, { href: "/donate", label: "Give today" }, { href: "/resources", label: "Resources" }, { href: "/policies", label: "Policies" }];
 
-// Social media links with fallback URLs
 export async function Footer() {
-  const siteSettings = await getSiteSettings();
-  // Use the correct social media URLs directly
-  const facebookUrl = "https://www.facebook.com/share/18huRdaCSr/";
-  const instagramUrl = "https://www.instagram.com/perurrayofhope?igsh=MWRwc200ZXdrYnB1cQ==";
-  const xUrl = "https://x.com/PerurRayofHope";
-  const contactEmail = siteSettings?.email || "info@perurraysofhope.org";
-  const contactPhone = siteSettings?.phone || "+254 724578225";
-  const contactAddress = siteSettings?.address || "West Pokot County, Kenya";
-
-  const socialLinks = [
-    { label: "Facebook", href: facebookUrl, icon: <FaFacebookF /> },
-    { label: "Instagram", href: instagramUrl, icon: <FaInstagram /> },
-    { label: "LinkedIn", href: siteSettings?.socialLinks?.linkedin, icon: <FaLinkedinIn /> },
-    { label: "X", href: xUrl, icon: <FaXTwitter /> }
+  const settings = await getSiteSettings();
+  const email = settings?.email || "info@perurraysofhope.org";
+  const phone = settings?.phone || "+254 724 578225";
+  const address = settings?.address || "Kapenguria, West Pokot County, Kenya";
+  const socials = [
+    { label: "Facebook", href: "https://www.facebook.com/share/18huRdaCSr/", icon: <FaFacebookF /> },
+    { label: "Instagram", href: "https://www.instagram.com/perurrayofhope?igsh=MWRwc200ZXdrYnB1cQ==", icon: <FaInstagram /> },
+    { label: "LinkedIn", href: settings?.socialLinks?.linkedin, icon: <FaLinkedinIn /> },
+    { label: "X", href: "https://x.com/PerurRayofHope", icon: <FaXTwitter /> }
   ].filter((item) => Boolean(item.href));
 
-  return (
-    <footer className="bg-brandBlue text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 container-padding py-12 md:grid-cols-3">
-        <div>
-          <div className="flex flex-wrap items-center gap-4">
-            <Image
-              src={siteImages.logo}
-              alt="Perur Rays of Hope logo"
-              width={240}
-              height={80}
-              className="h-auto w-48 object-contain sm:w-60"
-            />
-          </div>
-          <p className="mt-3 text-sm text-slate-200">
-            Safeguarding children, empowering youths and women, and conserving the environment for resilient livelihoods.
-          </p>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-200">Quick Links</h4>
-          <ul className="mt-3 space-y-2">
-            {quickLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="text-sm text-white hover:text-brandOrange">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-200">Contact</h4>
-          <p className="mt-3 text-sm">{contactAddress}</p>
-          <p className="text-sm">{contactEmail}</p>
-          <p className="text-sm">{contactPhone}</p>
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-2 inline-block text-sm text-slate-200 hover:text-brandOrange"
-          >
-            @perurrayofhope
-          </a>
-          {socialLinks.length > 0 && (
-            <div className="mt-4 flex gap-3">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.label}
-                  aria-label={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-white/10 p-2 hover:bg-brandGreen"
-                >
-                  {item.icon}
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-slate-200">
-        © {new Date().getFullYear()} Perur Rays of Hope. All rights reserved.
-      </div>
-    </footer>
-  );
+  return <footer className="bg-[#052a46] text-white">
+    <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.4fr_.75fr_.75fr_1fr] lg:px-8 lg:py-20">
+      <div><Image src={siteImages.logo} alt="Perur Rays of Hope logo" width={180} height={60} className="h-auto w-32 object-contain sm:w-40" /><p className="mt-7 max-w-sm text-sm leading-relaxed text-white/70">Safeguarding children, empowering women and youth, and conserving the environment for resilient livelihoods.</p><Link href="/donate" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-amber-300 hover:text-white">Support the work <ArrowUpRight className="h-4 w-4" /></Link></div>
+      <div><h2 className="text-xs font-bold uppercase tracking-[.18em] text-amber-300">Explore</h2><ul className="mt-5 space-y-3">{explore.map((link) => <li key={link.href}><Link href={link.href} className="text-sm text-white/75 hover:text-white">{link.label}</Link></li>)}</ul></div>
+      <div><h2 className="text-xs font-bold uppercase tracking-[.18em] text-amber-300">Take action</h2><ul className="mt-5 space-y-3">{action.map((link) => <li key={link.href}><Link href={link.href} className="text-sm text-white/75 hover:text-white">{link.label}</Link></li>)}</ul></div>
+      <div><h2 className="text-xs font-bold uppercase tracking-[.18em] text-amber-300">Find us</h2><div className="mt-5 space-y-4 text-sm leading-relaxed text-white/75"><p className="flex gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" />{address}</p><a href={`mailto:${email}`} className="flex gap-3 hover:text-white"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" />{email}</a><a href={`tel:${phone.replace(/\s/g, "")}`} className="flex gap-3 hover:text-white"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" />{phone}</a></div><div className="mt-7 flex gap-2">{socials.map((item) => <a key={item.label} href={item.href} aria-label={item.label} target="_blank" rel="noreferrer" className="grid h-9 w-9 place-items-center rounded-full border border-white/20 text-sm hover:border-amber-300 hover:bg-amber-300 hover:text-brandBlue">{item.icon}</a>)}</div></div>
+    </div>
+    <div className="border-t border-white/10"><div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-3 px-4 py-5 text-xs text-white/50 sm:px-6 lg:px-8"><span>© {new Date().getFullYear()} Perur Rays of Hope.</span><span>West Pokot, Kenya</span></div></div>
+  </footer>;
 }

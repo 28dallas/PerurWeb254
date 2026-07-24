@@ -18,23 +18,23 @@ export default async function BlogPage() {
 
   return (
     <>
-      <PageHero title="Blog" description="Browse stories, updates, and practical insights from our programs and partners." />
+      <PageHero eyebrow="From the field" title="Stories that move with the community." description="Updates, insight and moments of progress from across West Pokot." imageSrc="/images/new/photo_70_2026-03-03_11-10-37.jpg" />
 
       {featuredPost ? (
-        <Section title="Featured story" subtitle="A highlighted update from our latest community work.">
-          <article className="rounded-xl2 border border-slate-200 bg-white p-6 shadow-soft lg:grid lg:grid-cols-[1fr_1.2fr] lg:gap-8">
-            <div>
+        <Section className="bg-[#f4f1e9]" title="Featured story" subtitle="A closer look at the people and ideas shaping local progress.">
+          <article className="border-l-4 border-brandGreen bg-white p-7 shadow-soft lg:grid lg:grid-cols-[1.2fr_.8fr] lg:gap-12 lg:p-10">
+            <div className="lg:pr-8">
               <p className="text-sm font-semibold uppercase tracking-wide text-brandGreen">{featuredPost.category || "News"}</p>
-              <h2 className="mt-3 text-3xl font-bold text-brandBlue">{featuredPost.title}</h2>
-              <p className="mt-4 text-slate-700">{featuredPost.excerpt}</p>
+              <h2 className="mt-4 font-serif text-4xl leading-tight text-brandBlue">{featuredPost.title}</h2>
+              <p className="mt-5 text-lg leading-relaxed text-slate-600">{featuredPost.excerpt}</p>
             </div>
-            <div className="mt-6 flex items-end justify-between gap-4 border-t border-slate-200 pt-5 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+            <div className="mt-8 flex flex-col justify-end gap-6 border-t border-slate-200 pt-6 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
               <p className="text-sm text-slate-500">By {featuredPost.author?.name || "PRoH Team"}</p>
               <a
                 href={featuredHref}
                 target={isExternalFeatured ? "_blank" : undefined}
                 rel={isExternalFeatured ? "noopener noreferrer" : undefined}
-                className="text-sm font-semibold text-brandBlue hover:text-brandGreen"
+                className="inline-flex w-fit rounded-full bg-brandBlue px-5 py-3 text-sm font-bold text-white hover:bg-brandGreen"
               >
                 Read story
               </a>
@@ -43,18 +43,18 @@ export default async function BlogPage() {
         </Section>
       ) : null}
 
-      <Section title="Focus areas" subtitle="Explore updates by theme and follow the work happening across the community.">
+      <Section title="Focus areas" subtitle="Follow the work happening across the community.">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {["Child Protection", "Women Empowerment", "Youth Skills", "Environment"].map((item) => (
-            <article key={item} className="rounded-xl2 border border-slate-200 bg-white p-5 shadow-soft">
-              <h2 className="text-base font-semibold text-brandBlue">{item}</h2>
+            <article key={item} className="border-t-2 border-brandGreen bg-[#f4f1e9] p-6">
+              <h2 className="font-serif text-2xl text-brandBlue">{item}</h2>
               <p className="mt-2 text-sm text-slate-600">Stories, lessons, and field updates from this area of work.</p>
             </article>
           ))}
         </div>
       </Section>
 
-      <Section title="Latest news & insights">
+      <Section className="bg-[#f4f1e9]" title="Latest news & insights">
         <div className="mb-6 flex flex-wrap gap-2">
           {categories.map((category) => (
             <span key={category} className="rounded-full border border-brandBlue/20 bg-brandBlue/5 px-4 py-2 text-sm font-medium text-brandBlue">
