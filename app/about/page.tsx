@@ -10,7 +10,7 @@ const values = [
   ["Transparency", "We communicate openly with communities, partners and supporters.", Eye],
 ];
 const mandate = ["Empower women and youth through business skills and employability programmes.", "Promote quality education and support retention for vulnerable children.", "Safeguard children through community-led protection systems.", "Strengthen household livelihoods through savings and entrepreneurship support.", "Conserve the environment through climate-smart and restoration initiatives."];
-const team = [["Shujaa Caroline Menach, HSC.", "Executive Director"], ["Abiagel Moraa", "Program Manager"], ["Victor Maosi", "Finance Officer"], ["Ruth Akoule", "Program Reporting Officer"], ["Lilian Mnagei", "Community Lead & Focal Liaison Officer"]];
+const team = [["Shujaa Caroline Menach, HSC.", "Executive Director"], ["Abigael Moraa", "Program Manager"], ["Victor Maosi", "Finance Officer"], ["Ruth Akoule", "Program Reporting Officer"], ["Lilian Mnagei", "Community Lead & Focal Liaison Officer"]];
 const partners = [
   ["Global Give Back Circle (GGBC)", "/images/logo/gb.png"], ["Mastercard Foundation", "/images/logo/images.jpeg"], ["Circle Group", "/images/logo/Circle Group.jpg"], ["International Tree Foundation (ITF)", "/images/logo/itf.jpg"], ["Mekuno Project", "/images/logo/ms.png"]
 ];

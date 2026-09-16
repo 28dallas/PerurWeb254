@@ -25,6 +25,25 @@ function applicationHref(title: string) {
 
 export const careerRoles: CareerRole[] = [
   {
+    title: "Electrical Installation Trainer",
+    location: "West Pokot, Kenya",
+    type: "Trainer",
+    department: "Skills Training",
+    summary: "Deliver practical electrical installation training that builds safe, job-ready skills for youth and community learners.",
+    responsibilities: [
+      "Facilitate electrical installation theory, demonstrations, and supervised practical sessions.",
+      "Guide learners on tools, wiring, electrical safety, installation checks, and basic maintenance.",
+      "Support practical assessments, learner progress updates, attendance tracking, and training reports."
+    ],
+    requirements: [
+      "Relevant technical qualification or proven experience in electrical installation.",
+      "Experience training youth, apprentices, or community learners is preferred.",
+      "Strong safety practice, communication skills, and commitment to quality training."
+    ],
+    pdf: "/jobs/Electrical%20Installation%20Trainer.docx%20FINAL.pdf",
+    applyHref: applicationHref("Electrical Installation Trainer")
+  },
+  {
     title: "MERL Program Assistant",
     location: "Morpus, West Pokot County, Kenya",
     type: "Full-time",
@@ -92,23 +111,4 @@ export const careerRoles: CareerRole[] = [
     pdf: "/jobs/solar-pv-installation-trainer.pdf",
     applyHref: applicationHref("Solar PV Installation Trainer")
   },
-  {
-    title: "Electrical Installation Trainer",
-    location: "West Pokot, Kenya",
-    type: "Trainer / Consultancy",
-    department: "Skills Training",
-    summary: "Deliver practical electrical installation training that builds safe, job-ready skills for youth and community learners.",
-    responsibilities: [
-      "Facilitate electrical installation theory, demonstrations, and supervised practical sessions.",
-      "Guide learners on tools, wiring, electrical safety, installation checks, and basic maintenance.",
-      "Support practical assessments, learner progress updates, attendance tracking, and training reports."
-    ],
-    requirements: [
-      "Relevant technical qualification or proven experience in electrical installation.",
-      "Experience training youth, apprentices, or community learners is preferred.",
-      "Strong safety practice, communication skills, and commitment to quality training."
-    ],
-    pdf: "/jobs/Electrical%20Installation%20Trainer.docx%20FINAL.pdf",
-    applyHref: applicationHref("Electrical Installation Trainer")
-  }
 ];
